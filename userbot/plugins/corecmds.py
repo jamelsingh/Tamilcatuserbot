@@ -3,7 +3,7 @@ from pathlib import Path
 
 from ..Config import Config
 from ..utils import load_module, remove_plugin
-from . import CMD_HELP, CMD_LIST, SUDO_LIST, catub, edit_delete, edit_or_reply, reply_id
+from . import CMD_HELP, CMD_LIST, SUDO_LIST, catub, edit_delete, edit_or_reply, reply_id, hmention
 
 plugin_category = "tools"
 
@@ -99,7 +99,8 @@ async def send(event):
             allow_cache=False,
             reply_to=reply_to_id,
             thumb=thumb,
-            caption=f"**➥ Plugin Name:-** `{input_str}`",
+            caption=f"<b><i>➥ Plugin Name :- {input_str} .</i></b>\n<b><i>➥ Uploaded by :- {hmention}</i></b>",
+            parse_mode="html",
         )
         await event.delete()
     else:
