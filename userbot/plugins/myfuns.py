@@ -70,7 +70,7 @@ THANOS_STRINGS = [
     "`ആനി മോനെ സ്നേഹിക്കുന്ന പോലെ , മാഗ്ഗിക്ക് എന്നെ സ്നേഹിക്കാമോ...🥰🥰😘`",
     "`അല്ല ഇതാരാ ! വാര്യംപള്ളിയിലെ മീനാക്ഷിയല്ലയോ ? എന്താ മോളേ സ്കൂട്ടർല്...😜😜🤣`",
 ]
-ABUSEHARD_STRING = [
+ABUSEHARD_STRINGS = [
     "`നിന്റെ പേരെന്താന്നാ പറഞ്ഞെ -പൈലി ഡ്രാഗൺപൈലി ഡ്യൂഡ് സാറെന്ന്യല്ലേ പേരിട്ടത്.. എന്തൂള പേരാടാത് അയ്യേ...😛😛😜`",
     "`ദാമോദരൻ ഉണ്ണി മകൻ ദിൽമൻ ഇടക്കൊച്ചി, പീപ്പിൾ കാൾ മീ ഡ്യൂഡ് 😎😎🤨 `",
     "`മധ്യതിരുവിതാംകൂർ ഭരിച്ച രാജാവാ പേര് ശശി.. 😛😂🤣 `",
@@ -212,31 +212,27 @@ AYINU_STRINGS = [
 
 
 @catub.cat_cmd(pattern="ayinu$", command=("ayinu", plugin_category))
-async def ayinu(ayinu):
-    index = random.randint(0, len(AYINU_STRINGS) - 1)
-    reply_text = AYINU_STRINGS[index]
-    await ayinu.edit(reply_text)
+async def ayinu(e):
+    txt = random.choice(AYINU_STRINGS)
+    await edit_or_reply(e, txt)
 
 
 @catub.cat_cmd(pattern="mulla$", command=("mulla", plugin_category))
-async def mulla(mulla):
-    index = random.randint(0, len(MULLA_STRINGS) - 1)
-    reply_text = MULLA_STRINGS[index]
-    await mulla.edit(reply_text)
+async def mulla(e):
+    txt = random.choice(MULLA_STRINGS)
+    await edit_or_reply(e, txt)
 
 
 @catub.cat_cmd(pattern="alone$", command=("alone", plugin_category))
-async def alone(alone):
-    index = random.randint(0, len(ALONE_STRINGS) - 1)
-    reply_text = ALONE_STRINGS[index]
-    await alone.edit(reply_text)
+async def alone(e):
+    txt = random.choice(ALONE_STRINGS)
+    await edit_or_reply(e, txt)
 
 
 @catub.cat_cmd(pattern="kozhi$", command=("kozhi", plugin_category))
-async def hating(hated):
-    index = random.randint(0, len(HATE_STRINGS) - 1)
-    reply_text = HATE_STRINGS[index]
-    await hated.edit(reply_text)
+async def hating(e):
+    txt = random.choice(KOZHI_STRINGS)
+    await edit_or_reply(e, txt)
 
 
 @catub.cat_cmd(
@@ -311,38 +307,33 @@ async def slap(replied_user, event):
 
 
 @catub.cat_cmd(pattern="mrape$", command=("mrape", plugin_category))
-async def raping(raped):
-    index = random.randint(0, len(RAPE_STRINGS) - 1)
-    reply_text = RAPE_STRINGS[index]
-    await raped.edit(reply_text)
+async def raping(e):
+    txt = random.choice(RAPE_STRINGS)
+    await edit_or_reply(e, txt)
 
 
 @catub.cat_cmd(pattern="mshe$", command=("mshe", plugin_category))
-async def thanos(thanos):
-    index = random.randint(0, len(THANOS_STRINGS) - 1)
-    reply_text = THANOS_STRINGS[index]
-    await thanos.edit(reply_text)
+async def thanos(e):
+    txt = random.choice(THANOS_STRINGS)
+    await edit_or_reply(e, txt)
 
 
 @catub.cat_cmd(pattern="mabuse$", command=("mabuse", plugin_category))
-async def fuckedd(abusehard):
-    index = random.randint(0, len(ABUSEHARD_STRING) - 1)
-    reply_text = ABUSEHARD_STRING[index]
-    await abusehard.edit(reply_text)
+async def fuckedd(e):
+    txt = random.choice(ABUSEHARD_STRINGS)
+    await edit_or_reply(e, txt)
 
 
 @catub.cat_cmd(pattern="mruns$", command=("mruns", plugin_category))
-async def fuckedd(abusehard):
-    index = random.randint(0, len(RUNSREACTS) - 1)
-    reply_text = RUNSREACTS[index]
-    await abusehard.edit(reply_text)
+async def fuckedd(e):
+    txt = random.choice(RUNSREACTS)
+    await edit_or_reply(e, txt)
 
 
 @catub.cat_cmd(pattern="minsult$", command=("minsult", plugin_category))
-async def proo(pros):
-    index = random.randint(0, len(PRO_STRINGS) - 1)
-    reply_text = PRO_STRINGS[index]
-    await pros.edit(reply_text)
+async def proo(e):
+    txt = random.choice(PRO_STRINGS)
+    await edit_or_reply(e, txt)
 
 
 @catub.cat_cmd(pattern="foryou$", command=("foryou", plugin_category))
