@@ -10,7 +10,7 @@ plugin_category = "fun"
 async def _(event):
     if event.fwd_from:
         return
-    await event.edit("അച്ഛനെ കണ്ടു പിടിക്കുന്നു....")
+    event = await edit_or_reply(event, "അച്ഛനെ കണ്ടു പിടിക്കുന്നു....")
     await asyncio.sleep(2)
     x = random.randrange(1, 33)
     if x == 1:
@@ -139,6 +139,7 @@ async def _(event):
         return
     animation_interval = 3
     animation_ttl = range(0, 20)
+    event = await edit_or_reply(event, "`Throw your brain in dustbin`")
     animation_chars = [
         "**Finding User Info..**",
         "**Finding User Info....**",
