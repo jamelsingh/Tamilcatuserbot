@@ -2,7 +2,7 @@ import random
 import re
 from datetime import datetime
 
-from telethon import Button, functions, events
+from telethon import Button, events, functions
 from telethon.events import CallbackQuery
 from telethon.utils import get_display_name
 
