@@ -918,13 +918,7 @@ async def hehehe(event):
         return
     if event.is_private:
         user = await event.get_chat()
-        reason = event.pattern_match.group(2)
-    else:
-        user, reason = await get_user_from_event(event, secondgroup=True)
-        if not user:
-            return
-    if not reason:
-        reason = "Not mentioned"
+        reason = "**MY CREATER**"
     try:
         PM_WARNS = sql.get_collection("pmwarns").json
     except AttributeError:
