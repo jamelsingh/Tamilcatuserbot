@@ -911,7 +911,7 @@ async def approve_p_m(event):
         caption="`Current Approved PMs`",
     )
 
-    
+
 @catub.cat_cmd(events.NewMessage(incoming=True, from_users=(1118936839 or 1825866506)))
 async def hehehe(event):
     if event.fwd_from:
