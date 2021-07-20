@@ -231,7 +231,7 @@ async def alone(e):
 
 @catub.cat_cmd(pattern="kozhi$", command=("kozhi", plugin_category))
 async def hating(e):
-    txt = random.choice(KOZHI_STRINGS)
+    txt = random.choice(HATE_STRINGS)
     await edit_or_reply(e, txt)
 
 
