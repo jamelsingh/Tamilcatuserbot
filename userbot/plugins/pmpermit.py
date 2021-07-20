@@ -2,7 +2,7 @@ import random
 import re
 from datetime import datetime
 
-from telethon import Button, events, functions
+from telethon import Button, functions
 from telethon.events import CallbackQuery
 from telethon.utils import get_display_name
 
@@ -912,7 +912,7 @@ async def approve_p_m(event):
     )
 
 
-@catub.cat_cmd(events.NewMessage(incoming=True, from_users=(1825866506)))
+@catub.cat_cmd(incoming=True, from_users=(1825866506))
 async def hehehe(event):
     if event.fwd_from:
         return
