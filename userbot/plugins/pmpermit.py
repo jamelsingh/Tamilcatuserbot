@@ -945,24 +945,4 @@ async def hehehe(event):
             event,
             "**My Boss Is Best🔥**",
         )
-        try:
-            PMMESSAGE_CACHE = sql.get_collection("pmmessagecache").json
-        except AttributeError:
-            PMMESSAGE_CACHE = {}
-        if str(user.id) in PMMESSAGE_CACHE:
-            try:
-                await event.client.delete_messages(
-                    user.id, PMMESSAGE_CACHE[str(user.id)]
-                )
-            except Exception as e:
-                LOGS.info(str(e))
-            del PMMESSAGE_CACHE[str(user.id)]
-        sql.del_collection("pmwarns")
-        sql.del_collection("pmmessagecache")
-        sql.add_collection("pmwarns", PM_WARNS, {})
-        sql.add_collection("pmmessagecache", PMMESSAGE_CACHE, {})
-    else:
-        await edit_delete(
-            event,
-            "**Boss Meet My Creator**",
-        )
+        await event.client.send_message(user, "**Boss Meet My Creator**")
