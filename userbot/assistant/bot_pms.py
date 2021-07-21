@@ -109,10 +109,10 @@ async def bot_start(event):
                         \n\nPowered by [Catuserbot](https://t.me/catuserbot)"
         buttons = [
             (
-                Button.url("Repo", "https://github.com/Sur-vivor/CatUserbot"),
+                Button.url("Repo", "https://github.com/sandy1709/catuserbot"),
                 Button.url(
                     "Deploy",
-                    "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FSur-vivor%2Fnekopack&template=https%3A%2F%2Fgithub.com%2FSur-vivor%2Fnekopack",
+                    "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FMr-confused%2Fcatpack&template=https%3A%2F%2Fgithub.com%2FMr-confused%2Fcatpack",
                 ),
             )
         ]
@@ -177,7 +177,7 @@ async def bot_pms(event):  # sourcery no-metrics
                     )
                 else:
                     msg = await event.client.send_message(
-                        user_id, event.text, reply_to=reply_msg
+                        user_id, event.text, reply_to=reply_msg, link_preview=False
                     )
             except UserIsBlockedError:
                 return await event.reply("𝗧𝗵𝗶𝘀 𝗯𝗼𝘁 𝘄𝗮𝘀 𝗯𝗹𝗼𝗰𝗸𝗲𝗱 𝗯𝘆 𝘁𝗵𝗲 𝘂𝘀𝗲𝗿. ❌")
