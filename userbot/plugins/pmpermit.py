@@ -910,7 +910,3 @@ async def approve_p_m(event):
         file_name="approvedpms.txt",
         caption="`Current Approved PMs`",
     )
-
-
-
-
