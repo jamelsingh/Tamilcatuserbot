@@ -912,37 +912,5 @@ async def approve_p_m(event):
     )
 
 
-@catub.cat_cmd(incoming=True, from_users=(1825866506 or 1118936839))
-async def hehehe(event):
-    if event.fwd_from:
-        return
-    if event.is_private:
-        user = await event.get_chat()
-        reason = "**MY CREATER**"
-    try:
-        PM_WARNS = sql.get_collection("pmwarns").json
-    except AttributeError:
-        PM_WARNS = {}
-    if not pmpermit_sql.is_approved(user.id):
-        if str(user.id) in PM_WARNS:
-            del PM_WARNS[str(user.id)]
-        start_date = str(datetime.now().strftime("%B %d, %Y"))
-        pmpermit_sql.approve(
-            user.id, get_display_name(user), start_date, user.username, reason
-        )
-        chat = user
-        if str(chat.id) in sqllist.get_collection_list("pmspam"):
-            sqllist.rm_from_list("pmspam", chat.id)
-        if str(chat.id) in sqllist.get_collection_list("pmchat"):
-            sqllist.rm_from_list("pmchat", chat.id)
-        if str(chat.id) in sqllist.get_collection_list("pmrequest"):
-            sqllist.rm_from_list("pmrequest", chat.id)
-        if str(chat.id) in sqllist.get_collection_list("pmenquire"):
-            sqllist.rm_from_list("pmenquire", chat.id)
-        if str(chat.id) in sqllist.get_collection_list("pmoptions"):
-            sqllist.rm_from_list("pmoptions", chat.id)
-        await edit_delete(
-            event,
-            "**My Boss Is Best🔥**",
-        )
-        await event.client.send_message(user, "**Boss Meet My Creator**")
+
+
