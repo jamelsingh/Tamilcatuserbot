@@ -170,14 +170,14 @@ async def get_users(show):
         title = info.title if info.title else "this chat"
         mentions = "id,reason"
         try:
-            if not show.pattern_match.group(1):
+            if not show.pattern_match.group(2):
                 async for user in show.client.iter_participants(show.chat_id):
                     if not user.deleted and user.id != bot.uid:
                         mentions += f"\n{user.id},⚠️Porn / Porn Group Member//AntiPornFed #Massban🔞🛑"
                     elif user.id != bot.uid:
                         mentions += f"\n{user.id},⚠️Porn / Porn Group Member//AntiPornFed #Massban🔞🛑"
             else:
-                searchq = show.pattern_match.group(1)
+                searchq = show.pattern_match.group(2)
                 async for user in show.client.iter_participants(
                     show.chat_id, search=f"{searchq}"
                 ):
@@ -209,14 +209,14 @@ async def get_users(show):
         title = info.title if info.title else "this chat"
         mentions = "id,reason"
         try:
-            if not show.pattern_match.group(1):
+            if not show.pattern_match.group(2):
                 async for user in show.client.iter_participants(show.chat_id):
                     if not user.deleted and user.id != bot.uid:
                         mentions += f"\n{user.id},⚠️Suspicious/Btc Scammer/Fraudulent activities #Massban🛑"
                     elif user.id != bot.uid:
                         mentions += f"\n{user.id},⚠️Suspicious/Btc Scammer/Fraudulent activities #Massban🛑"
             else:
-                searchq = show.pattern_match.group(1)
+                searchq = show.pattern_match.group(2)
                 async for user in show.client.iter_participants(
                     show.chat_id, search=f"{searchq}"
                 ):
