@@ -166,7 +166,7 @@ async def get_users(show):
         if not show.is_group:
             await show.edit("Are you sure this is a group?")
             return
-        input_str = show.pattern_match.group(1) 
+        input_str = show.pattern_match.group(1)
         info = await show.client.get_entity(show.chat_id)
         title = info.title if info.title else "this chat"
         mentions = "id,reason"
