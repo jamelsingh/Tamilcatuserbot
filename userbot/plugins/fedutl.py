@@ -166,20 +166,20 @@ async def get_users(show):
         if not show.is_group:
             await show.edit("Are you sure this is a group?")
             return
+        input_str = show.pattern_match.group(1) 
         info = await show.client.get_entity(show.chat_id)
         title = info.title if info.title else "this chat"
         mentions = "id,reason"
         try:
-            if not show.pattern_match.group(2):
+            if not input_str:
                 async for user in show.client.iter_participants(show.chat_id):
                     if not user.deleted and user.id != bot.uid:
                         mentions += f"\n{user.id},⚠️Porn / Porn Group Member//AntiPornFed #Massban🔞🛑"
                     elif user.id != bot.uid:
                         mentions += f"\n{user.id},⚠️Porn / Porn Group Member//AntiPornFed #Massban🔞🛑"
             else:
-                searchq = show.pattern_match.group(2)
                 async for user in show.client.iter_participants(
-                    show.chat_id, search=f"{searchq}"
+                    show.chat_id, search=f"{input_str}"
                 ):
                     if not user.deleted and user.id != bot.uid:
                         mentions += f"\n{user.id},⚠️Porn / Porn Group Member//AntiPornFed #Massban🔞🛑"
