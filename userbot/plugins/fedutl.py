@@ -173,17 +173,17 @@ async def get_users(show):
         if not input_str:
             async for user in show.client.iter_participants(show.chat_id):
                 if not user.deleted and user.id != bot.uid:
-                    mentions += f"\n{user.id},⚠️Porn / Porn Group Member//AntiPornFed #Massban🔞🛑"
+                    mentions += f"\n{user.id}, Pornography // {title} #Massban🔞🛑"
                 elif user.id != bot.uid:
-                    mentions += f"\n{user.id},⚠️Porn / Porn Group Member//AntiPornFed #Massban🔞🛑"
+                    mentions += f"\n{user.id}, Pornography // {title} #Massban🔞🛑"
         else:
             async for user in show.client.iter_participants(
                 show.chat_id, search=f"{input_str}"
             ):
                 if not user.deleted and user.id != bot.uid:
-                    mentions += f"\n{user.id},⚠️Porn / Porn Group Member//AntiPornFed #Massban🔞🛑"
+                    mentions += f"\n{user.id}, Pornography / {title} #Massban🔞🛑"
                 elif user.id != bot.uid:
-                    mentions += f"\n{user.id},⚠️Porn / Porn Group Member//AntiPornFed #Massban🔞🛑"
+                    mentions += f"\n{user.id}, Pornography / {title} #Massban🔞🛑"
     except ChatAdminRequiredError as err:
         mentions += " " + str(err) + "\n"
     file = open("userslist.csv", "w+")
