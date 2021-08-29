@@ -159,10 +159,9 @@ async def _(event):
             await event.edit("**Error:** `unblock` @MissRose_Bot `and try again!")
 
 
-@catub.cat_cmd(pattern="plist$", command=("plist", plugin_category))
+@catub.cat_cmd(pattern="plist(?:\s|$)([\s\S]*)", command=("plist", plugin_category))
 async def get_users(show):
-    await show.delete()
-    if not show.text[0].isalpha() and show.text[0] not in ("/"):
+        await show.delete()
         if not show.is_group:
             await show.edit("Are you sure this is a group?")
             return
