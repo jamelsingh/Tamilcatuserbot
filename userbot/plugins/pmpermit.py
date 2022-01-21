@@ -487,7 +487,7 @@ __Let's make this smooth and let me know why you are here.__
     buttons = [
         (Button.inline(text="To enquire something.", data="to_enquire_something"),),
         (Button.inline(text="To request something.", data="to_request_something"),),
-        (Button.inline(text="To contact my master.", url=f"https://t.me/IAMJAMELSINGH")'),
+        (Button.inline(text="To contact my master.", url="https://t.me/IAMJAMELSINGH")'),
         (Button.inline(text="To chat with my master.", data="to_chat_with_my_master"),),
         (
             Button.inline(
