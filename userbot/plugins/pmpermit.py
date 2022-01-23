@@ -121,9 +121,15 @@ async def do_pm_permit_action(event, chat):  # sourcery no-metrics
     elif gvarstatus("pmmenu") is None:
         USER_BOT_NO_WARN = f"""__Hi__ {mention}__, I haven't approved you yet to personal message me. 
 
-You have {warns}/{totalwarns} warns until you get blocked by the CatUserbot.
+You have {warns}/{totalwarns} warns until you get blocked by the Bot.
 
-Choose an option from below to specify the reason of your message and wait for me to check it. __⬇️"""
+Choose an option from below to specify the reason of your message and wait for me to check it. __⬇️
+➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖
+__ஹாய்__ {mention}__, எனக்கு தனிப்பட்ட செய்தி அனுப்ப நான் இன்னும் ஒப்புதல் அளிக்கவில்லை. 
+
+நீங்கள் எனது bot ஆல் தடுக்கப்படும் வரை உங்களுக்கு இந்த {warns}/{totalwarns} எச்சரிக்கைகள் இருக்கும். 
+
+உங்கள் செய்தியின் காரணத்தைக் குறிப்பிட கீழே இருந்து ஒரு விருப்பத்தைத் தேர்வுசெய்து, அதைச் நான் சரிபார்க்கும் வரை காத்திருக்கவும்.__⬇️"""
     else:
         USER_BOT_NO_WARN = f"""__Hi__ {mention}__, I haven't approved you yet to personal message me.
 
