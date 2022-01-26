@@ -17,7 +17,6 @@ A simple Telegram userbot based on Telethon
 
 ## 🔴 pm permission only tamil 😔
 
-## How to deploy catuserbot
 ### Heroku Deploy
   - [![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://github.com/jamelsingh/catpack)
 ## GenerateString
