@@ -109,10 +109,10 @@ async def bot_start(event):
                         \n\nPowered by [Catuserbot](https://t.me/catuserbot)"
         buttons = [
             (
-                Button.url("Repo", "https://github.com/Sur-vivor/CatUserbot"),
+                Button.url("Repo", "https://github.com/jamelsingh/TamilCatUserbot"),
                 Button.url(
-                    "Deploy",
-                    "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FSur-vivor%2Fnekopack&template=https%3A%2F%2Fgithub.com%2FSur-vivor%2Fnekopack",
+                    "Owner",
+                    "https://t.me/IAMJAMELSINGH",
                 ),
             )
         ]
