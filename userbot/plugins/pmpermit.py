@@ -133,9 +133,15 @@ __ஹாய்__ {mention}__, எனக்கு தனிப்பட்ட ச
     else:
         USER_BOT_NO_WARN = f"""__Hi__ {mention}__, I haven't approved you yet to personal message me.
 
-You have {warns}/{totalwarns} warns until you get blocked by the CatUserbot.
+You have {warns}/{totalwarns} warns until you get blocked by the my bot.
 
-Don't spam my inbox. say reason and wait until my response.__"""
+Don't spam my inbox. say reason and wait until my response.
+            
+__ஹாய்__ {mention}__, எனக்கு தனிப்பட்ட செய்தி அனுப்ப நான் இன்னும் ஒப்புதல் அளிக்கவில்லை. 
+
+நீங்கள் எனது bot ஆல் தடுக்கப்படும் வரை உங்களுக்கு இந்த {warns}/{totalwarns} எச்சரிக்கைகள் இருக்கும். 
+
+எனது இன்பாக்சில் ஸ்பேம் செய்ய வேண்டாம். காரணம் சொல்லுங்கள். என் பதிலுக்காக காத்திருங்கள்.__"""
     addgvar("pmpermit_text", USER_BOT_NO_WARN)
     PM_WARNS[str(chat.id)] += 1
     try:
