@@ -18,14 +18,18 @@ A simple Telegram userbot based on Telethon
 ## 🔴 pm permission only tamil 😔
 
 ### Heroku Deploy
-  - [![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://github.com/jamelsingh/catpack)
+   [![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://github.com/jamelsingh/catpack)
 ## GenerateString
-[![GenerateString](https://img.shields.io/badge/repl.it-generateString-yellowgreen)](https://generatestringsession.sandeep1709.repl.run)
+   [![GenerateString](https://img.shields.io/badge/repl.it-generateString-yellowblue&width=220px)](https://generatestringsession.sandeep1709.repl.run)
 
 
 ### Self host
   - [check this](https://catuserbot.gitbook.io/catuserbot/tutorial/self-host)
   
+## JAMELSINGH
+   <a href="https://t.me/IAMJAMELSINGH"><img src="https://img.shields.io/badge/Channel%20Support%3F-yes-green?&style=flat-square?&logo=telegram" width=220px></a></p>
+  
+
 ## Support
    <a href="https://t.me/catuserbot17"><img src="https://img.shields.io/badge/Channel%20Support%3F-yes-green?&style=flat-square?&logo=telegram" width=220px></a></p>
    <a href="https://t.me/catuserbot_support"><img src="https://img.shields.io/badge/Group%20Support%3F-yes-green?&style=flat-square?&logo=telegram" width=220px></a></p>
