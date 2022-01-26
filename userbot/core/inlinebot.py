@@ -64,37 +64,37 @@ def main_menu():
         ),
         (
             Button.inline(
-                f"👮‍♂️ Admin ({len(GRP_INFO['admin'])})",
+                f"👮‍♂️Admin👮 ({len(GRP_INFO['admin'])})",
                 data=f"admin_menu",
             ),
             Button.inline(
-                f"🤖 Bot ({len(GRP_INFO['bot'])})",
+                f"🤖Bot🤖 ({len(GRP_INFO['bot'])})",
                 data=f"bot_menu",
             ),
         ),
         (
             Button.inline(
-                f"🎨 Fun ({len(GRP_INFO['fun'])})",
+                f"🎉Fun🎉 ({len(GRP_INFO['fun'])})",
                 data=f"fun_menu",
             ),
             Button.inline(
-                f"🧩 Misc ({len(GRP_INFO['misc'])})",
+                f"🗃️Misc🗃️ ({len(GRP_INFO['misc'])})",
                 data=f"misc_menu",
             ),
         ),
         (
             Button.inline(
-                f"🧰 Tools ({len(GRP_INFO['tools'])})",
+                f"🧰Tools🧰 ({len(GRP_INFO['tools'])})",
                 data=f"tools_menu",
             ),
             Button.inline(
-                f"🗂 Utils ({len(GRP_INFO['utils'])})",
+                f"🗂Utils🗂️ ({len(GRP_INFO['utils'])})",
                 data=f"utils_menu",
             ),
         ),
         (
             Button.inline(
-                f"➕ Extra ({len(GRP_INFO['extra'])})",
+                f"➕Extra➕ ({len(GRP_INFO['extra'])})",
                 data=f"extra_menu",
             ),
             Button.inline(
