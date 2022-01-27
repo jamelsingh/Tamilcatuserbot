@@ -24,7 +24,7 @@ A simple Telegram userbot based on Telethon
 ## termux string
 ```python
 pkg install python git openssl wget -y &&
- pip install telethon && 
+pip install telethon && 
 wget  https://raw.githubusercontent.com/jamelsingh/Tamilcatuserbot/master/stringsetup.py && 
 python3 stringsetup.py
 ```
