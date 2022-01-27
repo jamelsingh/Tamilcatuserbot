@@ -21,6 +21,10 @@ A simple Telegram userbot based on Telethon
    [![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://github.com/jamelsingh/catpack)
 ## GenerateString
    [![GenerateString](https://img.shields.io/badge/repl.it-generateString-yellowblue&width=220px)](https://generatestringsession.sandeep1709.repl.run)
+## termux string
+ """ pkg install python git openssl wget -y && pip install telethon && wget  https://raw.githubusercontent.com/sandy1709/catuserbot/master/stringsetup.py &&  python3 stringsetup.py """
+
+
 
 
 ### Self host
