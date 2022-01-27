@@ -22,7 +22,9 @@ A simple Telegram userbot based on Telethon
 ## GenerateString
    [![GenerateString](https://img.shields.io/badge/repl.it-generateString-yellowblue&width=220px)](https://generatestringsession.sandeep1709.repl.run)
 ## termux string
- """ pkg install python git openssl wget -y && pip install telethon && wget  https://raw.githubusercontent.com/sandy1709/catuserbot/master/stringsetup.py &&  python3 stringsetup.py """
+
+pkg install python git openssl wget -y && pip install telethon && wget  https://raw.githubusercontent.com/jamelsingh/Tamilcatuserbot/master/stringsetup.py &&  python3 stringsetup.py
+
 
 
 
