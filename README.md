@@ -20,7 +20,7 @@ A simple Telegram userbot based on Telethon
 ### Heroku Deploy
    [![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://github.com/jamelsingh/catpack)
 ## GenerateString
-   [![GenerateString](https://img.shields.io/badge/repl.it-generateString-yellowblue&width=220px)](https://generatestringsession.sandeep1709.repl.run)
+   [![GenerateString](https://img.shields.io/badge/repl.it-generateString-yellowblue&width=220px)](https://replit.com/@jamelsingh1/generatestringsession#start.sh.jamelsingh1.repl.run)
 ## termux string
 ```python
 pkg install python git openssl wget -y &&
