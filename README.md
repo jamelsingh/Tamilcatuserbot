@@ -15,8 +15,6 @@ A simple Telegram userbot based on Telethon
 [![GitHub forks](https://img.shields.io/github/forks/sandy1709/catuserbot?&style=flat-square&logo=github)](https://github.com/sandy1709/catuserbot/fork)
 [![GitHub stars](https://img.shields.io/github/stars/sandy1709/catuserbot?&style=flat-square&logo=github)](https://github.com/sandy1709/catuserbot/stargazers)
 
-## 🔴 pm permission only tamil 
-
 ### Heroku Deploy
    [![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://github.com/jamelsingh/catpack)
 ## GenerateString
