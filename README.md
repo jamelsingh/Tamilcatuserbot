@@ -22,6 +22,7 @@ A simple Telegram userbot based on Telethon
 ## GenerateString
    [![GenerateString](https://img.shields.io/badge/repl.it-generateString-yellowblue&width=220px)](https://replit.com/@jamelsingh1/generatestringsession#start.sh.jamelsingh1.repl.run)
 ## termux string
+ ⬇️Just copy paste to termux app⬇️
 ```
 pkg install python git openssl wget -y &&
 pip install telethon && 
