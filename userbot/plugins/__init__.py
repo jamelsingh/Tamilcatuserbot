@@ -17,7 +17,7 @@ from ..core.session import catub
 from ..helpers import *
 from ..helpers.utils import _cattools, _catutils, _format, install_pip, reply_id
 
-# =================== CONSTANT ===================
+# =================== CONSTANT =====================
 bot = catub
 LOGS = logging.getLogger(__name__)
 USERID = catub.uid if Config.OWNER_ID == 0 else Config.OWNER_ID
@@ -58,7 +58,7 @@ else:
     spamwatch = None
 
 
-# ================================================
+# =================================================
 
 if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
     os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
