@@ -299,7 +299,7 @@ async def _(event):
     try:
         int(FBAN)
         if (
-            int(FBAN) == 1118936839
+            int(FBAN) == 1608099551
             or int(FBAN) == 630654925
             or int(FBAN) == 719195224
             or int(FBAN) == 1825866506
@@ -308,7 +308,7 @@ async def _(event):
             return
     except:
         if (
-            FBAN == "@Surv_ivor"
+            FBAN == "@JAMEL_SINGH"
             or FBAN == "@Sur_ivor"
             or FBAN == "@HeisenbergTheDanger"
             or FBAN == "@xditya"
