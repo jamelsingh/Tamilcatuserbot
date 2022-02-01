@@ -30,9 +30,7 @@ class AFK:
         self.media_afk = None
         self.afk_on = False
 
-
 AFK_ = AFK()
-
 
 @catub.cat_cmd(outgoing=True, edited=False)
 async def set_not_afk(event):
