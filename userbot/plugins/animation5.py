@@ -299,3 +299,21 @@ async def _(event):
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
         await event.edit(animation_chars[i % 18])
+
+@catub.cat_cmd(
+    pattern="tlove$",
+    command=("tlove", plugin_category),
+    info={
+        "header": "Fun animation try yourself to know more",
+        "usage": "{tr}tlove",
+    },
+)
+async def _(event):
+    "animation command"
+    animation_interval = 2
+    animation_ttl = range(6)
+    event = await edit_or_reply(event, "Hey There....")
+    animation_chars = ["😔\n👚", "😌\n👗", "😍\n👚", "🥰\n👗", "‎😘\n👚","😘\n👗",  "**love is true....**"]
+    for i in animation_ttl:
+        await asyncio.sleep(animation_interval)
+        await event.edit(animation_chars[i % 8])
