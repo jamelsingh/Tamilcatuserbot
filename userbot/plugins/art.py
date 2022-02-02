@@ -4,6 +4,36 @@ plugin_category = "fun"
 
 
 @catub.cat_cmd(
+    pattern="ded ([\s\S]*)",
+    command=("ded", plugin_category),
+    info={
+        "header": "Just a art command try out yourself to see",
+        "usage": "{tr}ded <text>",
+    },
+)
+async def _(event):
+    "fun art command"
+    name = event.pattern_match.group(1)
+    await edit_or_reply(
+        event,
+        f"{ALIVE_NAME} --- {name}          \n　　　　　|"
+        "\n　　　　　| \n"
+        "　　　　　| \n"
+        "　　　　　| \n"
+        "　　　　　| \n"
+        "　　　　　| \n"
+        "　　　　　| \n"
+        "　　　　　| \n"
+        "　／￣￣＼| \n"
+        "＜ ´･ 　　 |＼ \n"
+        "　|　３　 | 丶＼ \n"
+        "＜ 、･　　|　　＼ \n"
+        "　＼＿＿／∪ _ ∪) \n"
+        "　　　　　 Ｕ Ｕ\n",
+    )
+
+
+@catub.cat_cmd(
     pattern="killer ([\s\S]*)",
     command=("killer", plugin_category),
     info={
@@ -300,50 +330,6 @@ R = (
     "░░░░░░░░░░░░▀▀\n"
 )
 
-TC = (
-     "    ⣴⣦⡀\n"
-     "    ⣿⣿⣿⣦⣤⣤⣀\n"
-     "    ⣿⣿⣿⣿⣿⣿⣿⣿⣦⣶⣾⣿⡇\n"
-     " ⡀ ⣼⠛⡛⢿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠀⠀⢀⣤⣤⢀⣤⣤⡀\n"
-     " ⠣⡀⣿⣄⠣⠃⢻⣿⡿⢛⢛⠻⣿⠏⠀⠀⠀⢿⣿⣿⣷⣿⣿⡆\n"
-     "⠑⠤⣈⠽⣿⣿⣿⡿⢿⣤⣈⣁⣰⡿⠀⠀⠀⠀⠈⠻⣿⣿⠿⠛⠁\n"
-     "⠑⠒⠒⠒⠉⣻⣿⣿⣿⣿⣿⣿⠿⠤⠤⢊⣀⣀⠀⠀⠙⠟⠁\n"
-     "     ⣠⣿⣿⣿⡏⠀⠘⢄⠉⠒⣲⣿⣿⣿⣿⡄⠀⢿⣦⣿⡄\n"
-⠀    "    ⣿⣿⣿⣿⣿⣿⣄    ⣿⣿⡛⢿⣿⣿⠀⠀⠟⠉\n"
-     "    ⠙⣿⣿⣿⣿⣿⣿⣷⣄  ⠹⣿⡿⢸⣿⣿⠀⢠⣶⣦\n"
-     "     ⢻⣿⣿⣿⣿⣿⣿⣿⣷⡀   ⣼⣿⡏⠀⠸⣿⣿⣾⣿\n"
-     "      ⣿⣿⣿⣿⣿⣿⣿⣿⣧⠀⢀⣼⣿⡿⠀⠀⠀⠟⠛⠉⠁\n"
-     "     ⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣿⣿⠟⠀⣠⣀⣄\n"
-     "    ⠙⠛⢻⢿⣿⡿⣿⣿⣿⡿⠿⠛⠋⠁⠀⠀⠙⢿⠋TACAT\n"
-)
-
-MB = (
-   "╭━━━━━━━╮\n"
-   "┃     ● ══      ┃\n"
-   "┃███████┃\n"
-   "┃███████┃\n"
-   "┃███████┃\n"
-   "┃███████┃\n"
-   "┃███████┃\n"
-   "┃███████┃\n"
-   "┃███████┃\n"
-   "┃███████┃\n"
-   "┃　 　O　    ┃\n"
-   "╰━━━━━━━╯\n"
-)
-
-IP = (
-   "     ╔═════╗♪\n"
-   "     ║█████║  ♫\n"
-   "     ║█████║♫\n"
-   "     ║█████║\n"
-   "     ║█████║\n"
-   "     ║      ●      ║ ♫\n"
-   "     ╚═════╝ ♪\n"
-   "0:35 ━❍──────── -5:32\n"
-   "↻     ⊲  Ⅱ  ⊳     ↺\n"
-   "VOLUME: ▁▂▃▄▅▆▇ 100%\n"
-)
 
 @catub.cat_cmd(
     pattern="monster$",
@@ -525,40 +511,3 @@ async def bluedevilshitos(shitos):
 async def bluedevildislike(dislike):
     "fun art command"
     await edit_or_reply(dislike, R)
-
-@catub.cat_cmd(
-    pattern="mob$",
-    command=("mob", plugin_category),
-    info={
-        "header": "Just a art command try out yourself to see",
-        "usage": "{tr}mob",
-    },
-)
-async def bluedevilmob(mob):
-    "fun art command"
-    await edit_or_reply(mob, MB)
-
-@catub.cat_cmd(
-    pattern="ipad$",
-    command=("ipad", plugin_category),
-    info={
-        "header": "Just a art command try out yourself to see",
-        "usage": "{tr}ipad",
-    },
-)
-async def bluedevilipad(ipad):
-    "fun art command"
-    await edit_or_reply(ipad, IP)
-
-@catub.cat_cmd(
-    pattern="tcat$",
-    command=("tcat", plugin_category),
-    info={
-        "header": "Just a art command try out yourself to see",
-        "usage": "{tr}tcat",
-    },
-)
-async def bluedevilpig(pig):
-    "fun art command"
-    await edit_or_reply(tcat, TC)
-
