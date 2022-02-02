@@ -592,3 +592,6 @@ async def bluedevilshitos(shitos):
 async def bluedevildislike(dislike):
     "fun art command"
     await edit_or_reply(dislike, R)
+
+
+
