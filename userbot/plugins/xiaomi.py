@@ -1,4 +1,3 @@
-# created by @eve_enryu
 # edited & fix by @Jisan7509
 
 from telethon import events
