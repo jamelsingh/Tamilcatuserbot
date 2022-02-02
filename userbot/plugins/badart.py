@@ -408,11 +408,11 @@ async def kakashi(e):
 
 # cat
 @catub.cat_cmd(
-    pattern="sdick ([\s\S]*)",
-    command=("sdick", plugin_category),
+    pattern="gbutts ([\s\S]*)",
+    command=("gbutts", plugin_category),
     info={
         "header": "bad art, try yourself ",
-        "usage": "{tr}sdick <text>",
+        "usage": "{tr}gbutts <text>",
     },
 )
 async def kakashi(dicksay):
