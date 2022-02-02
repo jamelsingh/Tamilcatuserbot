@@ -1,6 +1,5 @@
 import requests
 from validators.url import url
-
 from userbot import catub
 
 from ..core.managers import edit_delete, edit_or_reply
@@ -121,7 +120,6 @@ async def _(event):
         )
 
 
-# By Priyam Kalra
 @catub.cat_cmd(
     pattern="hl(?:\s|$)([\s\S]*)",
     command=("hl", plugin_category),
@@ -148,3 +146,4 @@ async def _(event):
     if not check:
         return await edit_delete(event, "`the given link is not supported`", 5)
     await edit_or_reply(event, "[ㅤㅤㅤㅤㅤㅤㅤ](" + input_str + ")")
+
