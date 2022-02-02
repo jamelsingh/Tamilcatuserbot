@@ -375,43 +375,6 @@ IP = (
    "VOLUME: ▁▂▃▄▅▆▇ 100%\n"
 )
 
-
-@catub.cat_cmd(
-    pattern="mob$",
-    command=("mob", plugin_category),
-    info={
-        "header": "Just a art command try out yourself to see",
-        "usage": "{tr}mob",
-    },
-)
-async def bluedevilmob(mob):
-    "fun art command"
-    await edit_or_reply(mob, MB)
-
-@catub.cat_cmd(
-    pattern="ipad$",
-    command=("ipad", plugin_category),
-    info={
-        "header": "Just a art command try out yourself to see",
-        "usage": "{tr}ipad",
-    },
-)
-async def bluedevilipad(ipad):
-    "fun art command"
-    await edit_or_reply(ipad, IP)
-
-@catub.cat_cmd(
-    pattern="tcat$",
-    command=("tcat", plugin_category),
-    info={
-        "header": "Just a art command try out yourself to see",
-        "usage": "{tr}tcat",
-    },
-)
-async def bluedevilpig(pig):
-    "fun art command"
-    await edit_or_reply(tcat, TC)
-
 @catub.cat_cmd(
     pattern="monster$",
     command=("monster", plugin_category),
@@ -593,5 +556,39 @@ async def bluedevildislike(dislike):
     "fun art command"
     await edit_or_reply(dislike, R)
 
+@catub.cat_cmd(
+    pattern="mob$",
+    command=("mob", plugin_category),
+    info={
+        "header": "Just a art command try out yourself to see",
+        "usage": "{tr}mob",
+    },
+)
+async def bluedevilmob(mob):
+    "fun art command"
+    await edit_or_reply(mob, MB)
 
+@catub.cat_cmd(
+    pattern="ipad$",
+    command=("ipad", plugin_category),
+    info={
+        "header": "Just a art command try out yourself to see",
+        "usage": "{tr}ipad",
+    },
+)
+async def bluedevilipad(ipad):
+    "fun art command"
+    await edit_or_reply(ipad, IP)
+
+@catub.cat_cmd(
+    pattern="tcat$",
+    command=("tcat", plugin_category),
+    info={
+        "header": "Just a art command try out yourself to see",
+        "usage": "{tr}tcat",
+    },
+)
+async def bluedevilpig(pig):
+    "fun art command"
+    await edit_or_reply(tcat, TC)
 
