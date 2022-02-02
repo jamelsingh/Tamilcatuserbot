@@ -415,7 +415,7 @@ async def kakashi(e):
         "usage": "{tr}gbutts <text>",
     },
 )
-async def kakashi(dicksay):
+async def kakashi(buttssay):
     "Bad stuff"
     text = buttssay.pattern_match.group(1)
     await edit_or_reply(
