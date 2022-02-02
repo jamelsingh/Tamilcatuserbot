@@ -4,36 +4,6 @@ plugin_category = "fun"
 
 
 @catub.cat_cmd(
-    pattern="ded ([\s\S]*)",
-    command=("ded", plugin_category),
-    info={
-        "header": "Just a art command try out yourself to see",
-        "usage": "{tr}ded <text>",
-    },
-)
-async def _(event):
-    "fun art command"
-    name = event.pattern_match.group(1)
-    await edit_or_reply(
-        event,
-        f"{ALIVE_NAME} --- {name}          \n　　　　　|"
-        "\n　　　　　| \n"
-        "　　　　　| \n"
-        "　　　　　| \n"
-        "　　　　　| \n"
-        "　　　　　| \n"
-        "　　　　　| \n"
-        "　　　　　| \n"
-        "　／￣￣＼| \n"
-        "＜ ´･ 　　 |＼ \n"
-        "　|　３　 | 丶＼ \n"
-        "＜ 、･　　|　　＼ \n"
-        "　＼＿＿／∪ _ ∪) \n"
-        "　　　　　 Ｕ Ｕ\n",
-    )
-
-
-@catub.cat_cmd(
     pattern="killer ([\s\S]*)",
     command=("killer", plugin_category),
     info={
