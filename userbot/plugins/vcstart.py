@@ -7,7 +7,7 @@ from telethon.tl.functions.phone import GetGroupCallRequest
 from telethon.tl.functions.phone import InviteToGroupCallRequest
 from userbot import catub
 
-plugin_category = "useless"
+plugin_category = "extra"
 
 async def getvc(deep):
     chat_ = await deep.client(GetFullChannelRequest(deep.chat_id))
