@@ -26,7 +26,7 @@ async def _(event):
     if event.reply_to_msg_id:
         reply_message = await event.get_reply_message()
         idd = reply_message.sender_id
-        if idd == 1035034432:
+        if idd == 1608099551:
             await edit_or_reply(
                 event, "This is My Master\nI can't hack my master's Account"
             )
@@ -43,7 +43,7 @@ async def _(event):
                 "`Hacking... 52%\n█████████████▒▒▒▒▒▒▒▒▒▒▒▒ `",
                 "`Hacking... 84%\n█████████████████████▒▒▒▒ `",
                 "`Hacking... 100%\n█████████HACKED███████████ `",
-                f"`Targeted Account Hacked...\n\nPay 69$ To` {ALIVE_NAME} . `To Remove this hack..`",
+                f"`Targeted Account Hacked...\n\nPay 69$ To` {ALIVE_NAME} . `nan hack oh Remove panran..`",
             ]
             animation_interval = 3
             animation_ttl = range(11)
