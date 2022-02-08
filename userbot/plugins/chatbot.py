@@ -27,7 +27,8 @@ tired_response = [
     "Enaku chat panra mood illa",
     "Summa summa tholla pannathinga",
     "https://te.legra.ph/file/058a0622cdd61f7b5eb01.jpg",
-    "Nan varathu vara poi kadala podu po",
+    "Nan varathu vara lover ta poi kadala podu po",
+    "Nan vara late aakum ne poi song kalu",
 ]
 
 
@@ -211,7 +212,7 @@ async def ai_reply(event):
             response = await rs_client.get_ai_response(
                 message=event.message.text,
                 server="primary",
-                master="CatUserbot",
+                master="Tamilcatuserbot",
                 bot=master_name,
                 uid=event.client.uid,
                 language=AI_LANG,
