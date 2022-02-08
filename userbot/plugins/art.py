@@ -75,6 +75,17 @@ B = (
     "┈┈┈┈┈┗┻┛┗┻┛┈┈┈┈\n"
 )
 
+C = (
+    "┈┈╭━╱▔▔▔▔╲━╮┈┈┈\n"
+    "┈┈╰╱╭▅╮╭▅╮╲╯┈┈┈\n"
+    "╳┈┈▏╰┈▅▅┈╯▕┈┈┈┈\n"
+    "┈┈┈╲┈╰━━╯┈╱┈┈╳┈\n"
+    "┈┈┈╱╱▔╲╱▔╲╲┈┈┈┈\n"
+    "┈╭━╮▔▏┊┊▕▔╭━╮┈╳\n"
+    "┈┃┊┣▔╲┊┊╱▔┫┊┃┈┈\n"
+    "┈╰━━━━╲╱━━━━╯┈╳\n"
+)
+
 D = (
     "░▐█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█▄\n"
     "░███████████████████████ \n"
@@ -355,6 +366,20 @@ async def bluedevilmonster(monster):
 async def bluedevilpig(pig):
     "fun art command"
     await edit_or_reply(pig, B)
+
+
+
+@catub.cat_cmd(
+    pattern="tcat$",
+    command=("tcat", plugin_category),
+    info={
+        "header": "Just a art command try out yourself to see",
+        "usage": "{tr}tcat",
+    },
+)
+async def bluedeviltcat(tcat):
+    "fun art command"
+    await edit_or_reply(tcat, C)
 
 
 @catub.cat_cmd(
