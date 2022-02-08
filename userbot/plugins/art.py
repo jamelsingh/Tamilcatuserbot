@@ -386,16 +386,16 @@ async def bluedevilpig(pig):
 
 
 @catub.cat_cmd(
-    pattern="tcat$",
-    command=("tcat", plugin_category),
+    pattern="tacat$",
+    command=("tacat", plugin_category),
     info={
         "header": "Just a art command try out yourself to see",
-        "usage": "{tr}tcat",
+        "usage": "{tr}tacat",
     },
 )
-async def bluedeviltcat(tcat):
+async def bluedeviltcat(tacat):
     "fun art command"
-    await edit_or_reply(tcat, C)
+    await edit_or_reply(tacat, C)
 
 
 @catub.cat_cmd(
