@@ -18,7 +18,7 @@ from ..sql_helper import pmpermit_sql
 from ..sql_helper.globals import addgvar, delgvar, gvarstatus
 from . import mention
 
-plugin_category = "tools"
+plugin_category = "utils"
 LOGS = logging.getLogger(__name__)
 cmdhd = Config.COMMAND_HAND_LER
 
@@ -121,27 +121,15 @@ async def do_pm_permit_action(event, chat):  # sourcery no-metrics
     elif gvarstatus("pmmenu") is None:
         USER_BOT_NO_WARN = f"""__Hi__ {mention}__, I haven't approved you yet to personal message me. 
 
-You have {warns}/{totalwarns} warns until you get blocked by the Bot.
+You have {warns}/{totalwarns} warns until you get blocked by the CatUserbot.
 
-Choose an option from below to specify the reason of your message and wait for me to check it. __⬇️
-➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖
-__ஹாய்__ {mention}__, எனக்கு தனிப்பட்ட செய்தி அனுப்ப நான் இன்னும் ஒப்புதல் அளிக்கவில்லை. 
-
-நீங்கள் எனது bot ஆல் தடுக்கப்படும் வரை உங்களுக்கு இந்த {warns}/{totalwarns} எச்சரிக்கைகள் இருக்கும். 
-
-உங்கள் செய்தியின் காரணத்தைக் குறிப்பிட கீழே இருந்து ஒரு விருப்பத்தைத் தேர்வுசெய்து, அதைச் நான் சரிபார்க்கும் வரை காத்திருக்கவும்.__⬇️"""
+Choose an option from below to specify the reason of your message and wait for me to check it. __⬇️"""
     else:
         USER_BOT_NO_WARN = f"""__Hi__ {mention}__, I haven't approved you yet to personal message me.
 
-You have {warns}/{totalwarns} warns until you get blocked by the my bot.
+You have {warns}/{totalwarns} warns until you get blocked by the CatUserbot.
 
-Don't spam my inbox. say reason and wait until my response.
-            
-__ஹாய்__ {mention}__, எனக்கு தனிப்பட்ட செய்தி அனுப்ப நான் இன்னும் ஒப்புதல் அளிக்கவில்லை. 
-
-நீங்கள் எனது bot ஆல் தடுக்கப்படும் வரை உங்களுக்கு இந்த {warns}/{totalwarns} எச்சரிக்கைகள் இருக்கும். 
-
-எனது இன்பாக்சில் ஸ்பேம் செய்ய வேண்டாம். காரணம் சொல்லுங்கள். என் பதிலுக்காக காத்திருங்கள்.__"""
+Don't spam my inbox. say reason and wait until my response.__"""
     addgvar("pmpermit_text", USER_BOT_NO_WARN)
     PM_WARNS[str(chat.id)] += 1
     try:
@@ -246,9 +234,6 @@ async def do_pm_enquire_action(event, chat):
         text = """__Hey! Have some patience. My master has not seen your message yet. \
 My master usually responds to people, though idk about some exceptional users.__
 __My master will respond when he/she comes online, if he/she wants to.__
-__🔴நீங்கள் ஸ்பேம் செய்வதற்கு இது சரியான இடம் அல்ல என்று எனது முந்தைய செய்தியில் குறிப்பிட் குறிப்பிட்டிருந்தேன்.\
-நீங்கள் அந்த செய்தியை புறக்கணித்ததால் நான் உங்களை தடுத்தேன்.__
-இப்போது என் மாஸ்டர் ஆன்லைன் வந்து உங்கள் தடையைய் நீக்கும் வரை காத்திருக்கவும்.__
 **Please do not spam unless you wish to be blocked and reported.**"""
         await event.reply(text)
         PM_WARNS[str(chat.id)] = 1
@@ -502,7 +487,6 @@ __Let's make this smooth and let me know why you are here.__
     buttons = [
         (Button.inline(text="To enquire something.", data="to_enquire_something"),),
         (Button.inline(text="To request something.", data="to_request_something"),),
-        (Button.inline(text="To contact my master.", url="https://t.me/IAMJAMELSINGH")'),
         (Button.inline(text="To chat with my master.", data="to_chat_with_my_master"),),
         (
             Button.inline(
