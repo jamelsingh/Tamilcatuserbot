@@ -311,9 +311,9 @@ async def _(event):
 async def _(event):
     "animation command"
     animation_interval = 2
-    animation_ttl = range(6)
+    animation_ttl = range(18)
     event = await edit_or_reply(event, "Hey There....")
-    animation_chars = ["😔\n👚", "😌\n👗", "😍\n👚", "🥰\n👗", "‎😘\n👚","😘\n👗",  "**love is true....**"]
+    animation_chars = ["😔\n👚", "😌\n👗", "😍\n👚", "🥰\n👗", "‎😘\n👚","😘\n👗","💍","👗\n👙","👚\n👖","🍑","💋","👶", "**love is true....**"]
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
         await event.edit(animation_chars[i % 8])
