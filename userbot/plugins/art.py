@@ -323,6 +323,26 @@ M = (
 )
 
 
+N = (
+     "....⣴⣦⡀\n"
+     "....⣿⣿⣿⣦⣤⣤⣀\n"
+     "....⣿⣿⣿⣿⣿⣿⣿⣿⣦⣶⣾⣿⡇\n"
+     "...⣼⠛⡛⢿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠀⠀⢀⣤⣤⢀⣤⣤⡀\n"
+     " ⠣⡀⣿⣄⠣⠃⢻⣿⡿⢛⢛⠻⣿⠏⠀⠀⠀⢿⣿⣿⣷⣿⣿⡆\n"
+     "⠑⠤⣈⠽⣿⣿⣿⡿⢿⣤⣈⣁⣰⡿⠀⠀⠀⠀⠈⠻⣿⣿⠿⠛⠁\n"
+     "⠑⠒⠒⠒⠉⣻⣿⣿⣿⣿⣿⣿⠿⠤⠤⢊⣀⣀⠀⠀⠙⠟⠁\n"
+     "....⣠⣿⣿⣿⡏⠀⠘⢄⠉⠒⣲⣿⣿⣿⣿⡄⠀⢿⣦⣿⡄\n"
+⠀    "    ⣿⣿⣿⣿⣿⣿⣄    ⣿⣿⡛⢿⣿⣿⠀⠀⠟⠉\n"
+     "    ⠙⣿⣿⣿⣿⣿⣿⣷⣄  ⠹⣿⡿⢸⣿⣿⠀⢠⣶⣦\n"
+     "     ⢻⣿⣿⣿⣿⣿⣿⣿⣷⡀   ⣼⣿⡏⠀⠸⣿⣿⣾⣿\n"
+     "      ⣿⣿⣿⣿⣿⣿⣿⣿⣧⠀⢀⣼⣿⡿⠀⠀⠀⠟⠛⠉⠁\n"
+     "     ⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣿⣿⠟⠀⣠⣀⣄\n"
+     "    ⠙⠛⢻⢿⣿⡿⣿⣿⣿⡿⠿⠛⠋⠁⠀⠀⠙⢿⠋\n"
+     "Power by Tamil Cat\n"
+)
+
+
+
 O = (
     "────██──────▀▀▀██\n"
     "──▄▀█▄▄▄─────▄▀█▄▄▄\n"
@@ -526,6 +546,20 @@ async def bluedevilsnake(snake):
 async def bluedevilmobile(mobile):
     "fun art command"
     await edit_or_reply(mobile, M)
+
+
+@catub.cat_cmd(
+    pattern="tacat$",
+    command=("tacat", plugin_category),
+    info={
+        "header": "Just a art command try out yourself to see",
+        "usage": "{tr}tacat",
+    },
+)
+async def bluedeviltacat(tacat):
+    "fun art command"
+    await edit_or_reply(tacat, N)
+
 
 
 @catub.cat_cmd(
