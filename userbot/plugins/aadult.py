@@ -16,7 +16,7 @@ async def _(event):
         return
     event = await edit_or_reply(event, "Adult Poem 🥰...")
     await asyncio.sleep(2)
-    x = random.randrange(1, 33)
+    x = random.randrange(1, 13)
     if x == 1:
 
         await event.edit(
