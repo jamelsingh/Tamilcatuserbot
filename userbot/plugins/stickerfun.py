@@ -1,10 +1,8 @@
 # Random RGB Sticklet by @PhycoNinja13b
 # modified by @UniBorg
-# imported from ppe-remix by @heyworld & @DeletedUser420
 # modified by @mrconfused
-
-
 # RegEx by https://t.me/c/1220993104/500653 ( @SnapDragon7410 )
+
 import io
 import os
 import random
