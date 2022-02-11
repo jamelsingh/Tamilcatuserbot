@@ -16,7 +16,7 @@ from ..helpers import media_type
 from ..helpers.utils import _catutils, reply_id
 from . import catub
 
-plugin_category = "useless"
+plugin_category = "fun"
 
 LOGS = logging.getLogger(__name__)
 
