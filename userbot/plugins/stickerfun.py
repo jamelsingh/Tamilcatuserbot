@@ -250,12 +250,12 @@ async def glax(event):
     )
 
 @catub.cat_cmd(
-    pattern="agst ?(.*)",
-    command=("agst", plugin_category),
+    pattern="gogl ?(.*)",
+    command=("gogl", plugin_category),
     info={
         "header": " To make animated google sticker",
         "usage": [
-            "{tr}agst <your text>",
+            "{tr}gogl <your text>",
         ],
     },
 )
