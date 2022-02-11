@@ -10,7 +10,7 @@ SURID = bot.uid
 
 plugin_category = "fun"
 
-@catub.cat_cmd(pattern="adpoyem$", command=("adpoem", plugin_category))
+@catub.cat_cmd(pattern="adpoem$", command=("adpoem", plugin_category))
 async def _(event):
     if event.fwd_from:
         return
