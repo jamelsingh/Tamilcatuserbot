@@ -1,7 +1,6 @@
 # Random RGB Sticklet by @PhycoNinja13b
 # modified by @UniBorg
 # modified by @mrconfused
-# RegEx by https://t.me/c/1220993104/500653 ( @SnapDragon7410 )
 
 import io
 import os
@@ -272,3 +271,73 @@ async def app(deep):
     	    result = await run[0].click("me")
     	    await result.delete()
     	    await deep.client.send_message(deep.chat_id, result, reply_to=reply_to_id)
+
+
+@catub.cat_cmd(
+    pattern="(|b)quby(?:\s|$)([\s\S]*)",
+    command=("quby", plugin_category),
+    info={
+        "header": "Make doge say anything.",
+        "flags": {
+            "b": "Give the sticker on background.",
+        },
+        "usage": [
+            "{tr}quby <text/reply to msg>",
+            "{tr}bquby <text/reply to msg>",
+        ],
+        "examples": [
+            "{tr}quby Gib money",
+            "{tr}bquby Gib money",
+        ],
+    },
+)
+async def quby(event):
+    "Make a cool quby text sticker"
+    cmd = event.pattern_match.group(1).lower()
+    text = event.pattern_match.group(2)
+    reply_to_id = await reply_id(event)
+    if not text and event.is_reply:
+        text = (await event.get_reply_message()).message
+    if not text:
+        return await edit_delete(
+            event, "__What is quby supposed to say? Give some text.__"
+        )
+    await edit_delete(event, "`Wait, processing.....`")
+    if not os.path.isdir("./temp"):
+        os.mkdir("./temp")
+    temp_name = "./temp/quby_temp.png"
+    file_name = "./temp/quby.png"
+    templait = urllib.request.urlretrieve(
+        "https://telegra.ph/file/09f4df5a129758a2e1c9c.jpg", temp_name
+    )
+    if len(text) < 40:
+        font = 80
+        wrap = 1.4
+        position = (100, 0)
+    else:
+        font = 60
+        wrap = 1.2
+        position = (0, 0)
+    text = deEmojify(text)
+    higlighted_text(
+        temp_name,
+        text,
+        file_name,
+        text_wrap=wrap,
+        font_size=font,
+        linespace="+4",
+        position=position,
+    )
+    if cmd == "b":
+        cat = convert_tosticker(file_name)
+        await event.client.send_file(
+            event.chat_id, cat, reply_to=reply_to_id, force_document=False
+        )
+    else:
+        await clippy(event.client, file_name, event.chat_id, reply_to_id)
+    await event.delete()
+    for files in (temp_name, file_name):
+        if files and os.path.exists(files):
+            os.remove(files)
+
+
