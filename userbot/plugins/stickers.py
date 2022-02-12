@@ -582,6 +582,86 @@ async def pack_kang(event):  # sourcery no-metrics
 
 
 @catub.cat_cmd(
+    pattern="vas$",
+    command=("vas", plugin_category),
+    info={
+        "header": "Converts video/gif to animated sticker",
+        "description": "Converts video/gif to .webm file and send a temporary animated sticker of that file",
+        "usage": "{tr}vas <Reply to Video/Gif>",
+    },
+)
+async def pussycat(args):
+    "To kang a sticker."  # scam :('  Dom't kamg :/@Jisan7509
+    message = await args.get_reply_message()
+    user = await args.client.get_me()
+    if not user.username:
+        try:
+            user.first_name.encode("utf-8").decode("ascii")
+            user.first_name
+        except UnicodeDecodeError:
+            f"cat_{user.id}"
+    else:
+        user.username
+    userid = user.id
+    if message and message.media:
+        if "video/mp4" in message.media.document.mime_type:
+            catevent = await edit_or_reply(args, "__⌛ Downloading..__")
+            sticker = await animator(message, args, catevent)
+            await edit_or_reply(catevent, f"`{random.choice(KANGING_STR)}`")
+        else:
+            await edit_delete(args, "`Reply to video/gif...!`")
+            return
+    else:
+        await edit_delete(args, "`I can't convert that...`")
+        return
+    cmd = "/newvideo"
+    packname = f"tadcat_{userid}_temp_pack"
+    response = urllib.request.urlopen(
+        urllib.request.Request(f"http://t.me/addstickers/{packname}")
+    )
+    htmlstr = response.read().decode("utf8").split("\n")
+    if (
+        "  A <strong>Telegram</strong> user has created the <strong>Sticker&nbsp;Set</strong>."
+        not in htmlstr
+    ):
+        async with args.client.conversation("@Stickers") as xconv:
+            await delpack(
+                catevent,
+                xconv,
+                cmd,
+                args,
+                packname,
+            )
+    await catevent.edit("`Hold on, making sticker...`")
+    async with args.client.conversation("@Stickers") as conv:
+        otherpack, packname, emoji = await newpacksticker(
+            catevent,
+            conv,
+            "/newvideo",
+            args,
+            1,
+            "BadCat",
+            True,
+            "😂",
+            packname,
+            False,
+            io.BytesIO(),
+        )
+    if otherpack is None:
+        return
+    await catevent.delete()
+    await args.client.send_file(
+        args.chat_id,
+        sticker,
+        force_document=True,
+        caption=f"**[Sticker Preview](t.me/addstickers/{packname})**\n*__It will remove automatically on your next convert.__",
+        reply_to=message,
+    )
+    if os.path.exists(sticker):
+        os.remove(sticker)
+
+
+@catub.cat_cmd(
     pattern="gridpack(?:\s|$)([\s\S]*)",
     command=("gridpack", plugin_category),
     info={
