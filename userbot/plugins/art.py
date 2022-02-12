@@ -341,7 +341,6 @@ N = (
 )
 
 
-
 O = (
     "────██──────▀▀▀██\n"
     "──▄▀█▄▄▄─────▄▀█▄▄▄\n"
@@ -558,7 +557,6 @@ async def bluedevilmobile(mobile):
 async def bluedeviltacat(tacat):
     "fun art command"
     await edit_or_reply(tacat, N)
-
 
 
 @catub.cat_cmd(
