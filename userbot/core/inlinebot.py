@@ -688,3 +688,4 @@ async def on_plug_in_callback_query_handler(event):
         \n**Category :** `{category_plugins}`\
         \n\n**✘ Intro :**\n{CMD_INFO[cmd][0]}"
     await event.edit(text, buttons=buttons)
+
