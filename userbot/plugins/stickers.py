@@ -640,7 +640,7 @@ async def pussycat(args):
             "/newvideo",
             args,
             1,
-            "BadCat",
+            "tacat",
             True,
             "😂",
             packname,
