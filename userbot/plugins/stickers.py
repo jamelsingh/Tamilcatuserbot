@@ -131,6 +131,72 @@ async def newpacksticker(
     otherpack=False,
     pkang=False,
 ):
+
+try:
+        await conv.send_message(cmd)
+    except YouBlockedUserError:
+        await catevent.edit("You have blocked the @stickers bot. unblock it and try.")
+        if not pkang:
+            return None, None, None
+        return None, None
+    await conv.get_response()
+    await args.client.send_read_acknowledge(conv.chat_id)
+    await conv.send_message(packnick)
+    await conv.get_response()
+    await args.client.send_read_acknowledge(conv.chat_id)
+    if is_video:
+        await conv.send_file("animate.webm")
+    elif is_anim:
+        await conv.send_file("AnimatedSticker.tgs")
+        os.remove("AnimatedSticker.tgs")
+    else:
+        stfile.seek(0)
+        await conv.send_file(stfile, force_document=True)
+    rsp = await conv.get_response()
+    if not verify_cond(EMOJI_SEN, rsp.text):
+        await catevent.edit(
+            f"Failed to add sticker, use @Stickers bot to add the sticker manually.\n**error :**{rsp}"
+        )
+        if not pkang:
+            return None, None, None
+        return None, None
+    await conv.send_message(emoji)
+    await args.client.send_read_acknowledge(conv.chat_id)
+    await conv.get_response()
+    await conv.send_message("/publish")
+    if is_anim:
+        await conv.get_response()
+        await conv.send_message(f"<{packnick}>")
+    await conv.get_response()
+    await args.client.send_read_acknowledge(conv.chat_id)
+    await conv.send_message("/skip")
+    await args.client.send_read_acknowledge(conv.chat_id)
+    await conv.get_response()
+    await conv.send_message(packname)
+    await args.client.send_read_acknowledge(conv.chat_id)
+    await conv.get_response()
+    await args.client.send_read_acknowledge(conv.chat_id)
+    if not pkang:
+        return otherpack, packname, emoji
+    return pack, packname
+
+
+async def add_to_pack(
+    catevent,
+    conv,
+    args,
+    packname,
+    pack,
+    userid,
+    username,
+    is_video,
+    is_anim,
+    stfile,
+    emoji,
+    cmd,
+    pkang=False,
+):
+
     try:
         await conv.send_message(cmd)
     except YouBlockedUserError:
