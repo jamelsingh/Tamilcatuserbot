@@ -56,53 +56,35 @@ def main_menu():
     text = f"𝗖𝗮𝘁𝗨𝘀𝗲𝗿𝗯𝗼𝘁 𝗛𝗲𝗹𝗽𝗲𝗿\
         \n𝗣𝗿𝗼𝘃𝗶𝗱𝗲𝗱 𝗯𝘆 {mention}"
     buttons = [
+        (Button.inline('ℹ️ Info', data="check"),),
         (
             Button.inline(
-                f"ℹ️ Info",
-                data="check",
+                f"👮‍♂️Admin👮 ({len(GRP_INFO['admin'])})", data='admin_menu'
+            ),
+            Button.inline(f"🤖Bot🤖 ({len(GRP_INFO['bot'])})", data='bot_menu'),
+        ),
+        (
+            Button.inline(f"🎉Fun🎉 ({len(GRP_INFO['fun'])})", data='fun_menu'),
+            Button.inline(
+                f"🗃️Misc🗃️ ({len(GRP_INFO['misc'])})", data='misc_menu'
             ),
         ),
         (
             Button.inline(
-                f"👮‍♂️Admin👮 ({len(GRP_INFO['admin'])})",
-                data=f"admin_menu",
+                f"🧰Tools🧰 ({len(GRP_INFO['tools'])})", data='tools_menu'
             ),
             Button.inline(
-                f"🤖Bot🤖 ({len(GRP_INFO['bot'])})",
-                data=f"bot_menu",
+                f"🗂Utils🗂️ ({len(GRP_INFO['utils'])})", data='utils_menu'
             ),
         ),
         (
             Button.inline(
-                f"🎉Fun🎉 ({len(GRP_INFO['fun'])})",
-                data=f"fun_menu",
+                f"➕Extra➕ ({len(GRP_INFO['extra'])})", data='extra_menu'
             ),
-            Button.inline(
-                f"🗃️Misc🗃️ ({len(GRP_INFO['misc'])})",
-                data=f"misc_menu",
-            ),
-        ),
-        (
-            Button.inline(
-                f"🧰Tools🧰 ({len(GRP_INFO['tools'])})",
-                data=f"tools_menu",
-            ),
-            Button.inline(
-                f"🗂Utils🗂️ ({len(GRP_INFO['utils'])})",
-                data=f"utils_menu",
-            ),
-        ),
-        (
-            Button.inline(
-                f"➕Extra➕ ({len(GRP_INFO['extra'])})",
-                data=f"extra_menu",
-            ),
-            Button.inline(
-                f"🔒 Close Menu",
-                data=f"close",
-            ),
+            Button.inline('🔒 Close Menu', data='close'),
         ),
     ]
+
     return text, buttons
 
 
@@ -124,15 +106,11 @@ def paginate_help(
 ):  # sourcery no-metrics
     try:
         number_of_rows = int(gvarstatus("NO_OF_ROWS_IN_HELP") or 5)
-    except ValueError:
-        number_of_rows = 5
-    except TypeError:
+    except (ValueError, TypeError):
         number_of_rows = 5
     try:
         number_of_cols = int(gvarstatus("NO_OF_COLUMNS_IN_HELP") or 2)
-    except ValueError:
-        number_of_cols = 2
-    except TypeError:
+    except (ValueError, TypeError):
         number_of_cols = 2
     HELP_EMOJI = gvarstatus("HELP_EMOJI") or " "
     helpable_plugins = [p for p in loaded_plugins if not p.startswith("_")]

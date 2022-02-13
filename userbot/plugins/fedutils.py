@@ -31,7 +31,7 @@ async def fetch_fedinfo(event):
     catevent = await edit_or_reply(event, "`Fetching info about given fed...`")
     async with event.client.conversation(rose) as conv:
         try:
-            await conv.send_message("/fedinfo " + input_str)
+            await conv.send_message(f'/fedinfo {input_str}')
             response = await conv.get_response()
             await catevent.edit(response.text)
         except YouBlockedUserError:
@@ -67,13 +67,14 @@ async def fetch_fedinfo(event):
     catevent = await edit_or_reply(event, "`Fetching admins list of given fed...`")
     async with event.client.conversation(rose) as conv:
         try:
-            await conv.send_message("/fedadmins " + input_str)
+            await conv.send_message(f'/fedadmins {input_str}')
             response = await conv.get_response()
             await catevent.edit(
-                f"**Fedid:** ```{input_str}```\n\n" + response.text
+                f'**Fedid:** ```{input_str}```\n\n{response.text}'
                 if input_str
                 else response.text
             )
+
         except YouBlockedUserError:
             await edit_delete(
                 catevent,

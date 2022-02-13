@@ -104,8 +104,7 @@ async def echo(event):
 )
 async def echo(event):
     "To delete echo in this chat."
-    input_str = event.pattern_match.group(1)
-    if input_str:
+    if input_str := event.pattern_match.group(1):
         lecho = get_all_echos()
         if len(lecho) == 0:
             return await edit_delete(
@@ -149,7 +148,7 @@ async def echo(event):
         ],
     },
 )
-async def echo(event):  # sourcery no-metrics
+async def echo(event):    # sourcery no-metrics
     "To list all users on who you enabled echoing."
     input_str = event.pattern_match.group(1)
     private_chats = ""
@@ -194,7 +193,7 @@ async def echo(event):  # sourcery no-metrics
                 private_chats += (
                     f"☞ [{echos.user_name}](tg://user?id={echos.user_id})\n"
                 )
-        output_str = f"**Echo enabled users in this chat are:**\n" + private_chats
+        output_str = f'**Echo enabled users in this chat are:**\n{private_chats}'
 
     await edit_or_reply(event, output_str)
 

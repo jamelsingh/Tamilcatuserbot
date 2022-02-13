@@ -43,9 +43,8 @@ async def amireallyalive(event):
     CUSTOM_ALIVE_TEXT = (
         gvarstatus("ALIVE_TEXT") or "**💠 MY TAMIL BOT IS RUNNING SUCCESSFULLY 💠**"
     )
-    CAT_IMG = gvarstatus("ALIVE_PIC")
-    if CAT_IMG:
-        CAT = [x for x in CAT_IMG.split()]
+    if CAT_IMG := gvarstatus("ALIVE_PIC"):
+        CAT = list(CAT_IMG.split())
         A_IMG = list(CAT)
         PIC = random.choice(A_IMG)
         cat_caption = f"{CUSTOM_ALIVE_TEXT}\n\n"

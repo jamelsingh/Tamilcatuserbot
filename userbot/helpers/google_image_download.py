@@ -641,8 +641,8 @@ class googleimagesdownload:
         if any(map(lambda extension: extension in image_name, extensions)):
             file_name = main_directory + "/" + image_name
         else:
-            file_name = main_directory + "/" + image_name + ".jpg"
-            image_name = image_name + ".jpg"
+            file_name = f'{main_directory}/' + image_name + ".jpg"
+            image_name = f'{image_name}.jpg'
 
         try:
             with open(file_name, "wb") as output_file:
@@ -672,9 +672,7 @@ class googleimagesdownload:
             l2 = content.find("&", l1)
             urll = content[l1:l2]
 
-            newurl = (
-                "https://www.google.com/search?tbs=sbi:" + urll + "&site=search&sa=X"
-            )
+            newurl = f'https://www.google.com/search?tbs=sbi:{urll}&site=search&sa=X'
             req2 = urllib.request.Request(newurl, headers=headers)
             urllib.request.urlopen(req2)
             l3 = content.find("/search?sa=X&amp;q=")
@@ -724,7 +722,7 @@ class googleimagesdownload:
         if arguments["time_range"]:
             json_acceptable_string = arguments["time_range"].replace("'", '"')
             d = json.loads(json_acceptable_string)
-            time_range = ",cdr:1,cd_min:" + d["time_min"] + ",cd_max:" + d["time_max"]
+            time_range = f',cdr:1,cd_min:{d["time_min"]},cd_max:{d["time_max"]}'
         else:
             time_range = ""
 
@@ -837,7 +835,7 @@ class googleimagesdownload:
                 },
             ],
         }
-        for key, value in params.items():
+        for value in params.values():
             if value[0] is not None:
                 ext_param = value[1][value[0]]
                 # counter will tell if it is first param added or not
@@ -845,7 +843,7 @@ class googleimagesdownload:
                     # add it to the built url
                     built_url += ext_param
                 else:
-                    built_url = built_url + "," + ext_param
+                    built_url = f'{built_url},{ext_param}'
                 counter += 1
         built_url = lang_url + built_url + exact_size + time_range
         return built_url
@@ -910,9 +908,12 @@ class googleimagesdownload:
         search_keyword = []
         with codecs.open(file_name, "r", encoding="utf-8-sig") as f:
             if ".csv" in file_name or ".txt" in file_name:
-                for line in f:
-                    if line not in ["\n", "\r\n"]:
-                        search_keyword.append(line.replace("\n", "").replace("\r", ""))
+                search_keyword.extend(
+                    line.replace("\n", "").replace("\r", "")
+                    for line in f
+                    if line not in ["\n", "\r\n"]
+                )
+
             else:
                 print(
                     "Invalid file type: Valid file types are either .txt or .csv \n"
@@ -923,7 +924,7 @@ class googleimagesdownload:
 
     # make directories
     def create_directories(self, main_directory, dir_name, thumbnail, thumbnail_only):
-        dir_name_thumbnail = dir_name + " - thumbnail"
+        dir_name_thumbnail = f'{dir_name} - thumbnail'
         # make a search keyword  directory
         try:
             if not os.path.exists(main_directory):
@@ -960,7 +961,7 @@ class googleimagesdownload:
         ignore_urls,
     ):
         if print_urls or no_download:
-            print("Image URL: " + image_url)
+            print(f'Image URL: {image_url}')
         if no_download:
             return "success", "Printed url without downloading"
         try:
@@ -990,7 +991,7 @@ class googleimagesdownload:
                     with open(path, "wb") as output_file:
                         output_file.write(data)
                     if save_source:
-                        list_path = main_directory + "/" + save_source + ".txt"
+                        list_path = f'{main_directory}/{save_source}.txt'
                         with open(list_path, "a") as list_file:
                             list_file.write(path + "\t" + img_src + "\n")
                 except OSError as e:
@@ -1005,9 +1006,7 @@ class googleimagesdownload:
                     )
 
                 download_status = "success"
-                download_message = (
-                    "Completed Image Thumbnail ====> " + return_image_name
-                )
+                download_message = f'Completed Image Thumbnail ====> {return_image_name}'
 
                 # image size parameter
                 if print_size:

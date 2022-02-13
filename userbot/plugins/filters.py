@@ -193,9 +193,8 @@ async def remove_a_filter(event):
 )
 async def on_all_snip_delete(event):
     "To delete all filters in that group."
-    filters = get_filters(event.chat_id)
-    if filters:
+    if filters := get_filters(event.chat_id):
         remove_all_filters(event.chat_id)
-        await edit_or_reply(event, f"filters in current chat deleted successfully")
+        await edit_or_reply(event, 'filters in current chat deleted successfully')
     else:
-        await edit_or_reply(event, f"There are no filters in this group")
+        await edit_or_reply(event, 'There are no filters in this group')

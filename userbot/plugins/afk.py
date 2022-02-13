@@ -209,7 +209,7 @@ async def _(event):
                 event, f"`I shall be Going afk! because ~` {AFK_.reason}", 5
             )
         else:
-            await edit_delete(event, f"`I shall be Going afk! `", 5)
+            await edit_delete(event, '`I shall be Going afk! `', 5)
         if BOTLOG:
             if AFK_.reason:
                 await event.client.send_message(
@@ -219,7 +219,7 @@ async def _(event):
             else:
                 await event.client.send_message(
                     BOTLOG_CHATID,
-                    f"#AFKTRUE \nSet AFK mode to True, and Reason is Not Mentioned",
+                    '#AFKTRUE \nSet AFK mode to True, and Reason is Not Mentioned',
                 )
 
 
@@ -273,7 +273,7 @@ async def _(event):
                 event, f"`I shall be Going afk! because ~` {AFK_.reason}", 5
             )
         else:
-            await edit_delete(event, f"`I shall be Going afk! `", 5)
+            await edit_delete(event, '`I shall be Going afk! `', 5)
         AFK_.media_afk = await reply.forward_to(BOTLOG_CHATID)
         if AFK_.reason:
             await event.client.send_message(
@@ -283,5 +283,5 @@ async def _(event):
         else:
             await event.client.send_message(
                 BOTLOG_CHATID,
-                f"#AFKTRUE \nSet AFK mode to True, and Reason is Not Mentioned",
+                '#AFKTRUE \nSet AFK mode to True, and Reason is Not Mentioned',
             )
