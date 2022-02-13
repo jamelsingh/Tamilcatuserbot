@@ -180,7 +180,6 @@ try:
         return otherpack, packname, emoji
     return pack, packname
 
-
 async def add_to_pack(
     catevent,
     conv,
