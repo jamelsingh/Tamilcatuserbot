@@ -1,5 +1,6 @@
 import requests
 from validators.url import url
+from ..core.managers import edit_delete, edit_or_reply
 from userbot import catub
 
 from ..core.managers import edit_delete, edit_or_reply
