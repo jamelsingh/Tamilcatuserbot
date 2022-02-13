@@ -7,6 +7,7 @@ from uuid import uuid4
 import requests
 
 from ..utils.extdl import install_pip
+from ..utils.utils import runcmd
 
 try:
     from imdb import IMDb
