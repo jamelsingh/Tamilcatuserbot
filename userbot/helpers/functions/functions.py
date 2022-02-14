@@ -4,13 +4,11 @@ from random import choice
 from textwrap import wrap
 from uuid import uuid4
 
-import aiohttp
 import requests
+from googletrans import Translator
 
 from ..utils.extdl import install_pip
 from ..utils.utils import runcmd
-
-
 
 try:
     from imdb import IMDb
@@ -87,23 +85,6 @@ async def animator(media, mainevent, textevent):
     w, h = (-1, 512) if h > w else (512, -1)
     if not os.path.isdir(Config.TEMP_DIR):
         os.makedirs(Config.TEMP_DIR)
-    TaCat = await mainevent.client.download_media(media, Config.TEMP_DIR)
-    await textevent.edit("__🎞Converting into Animated sticker..__")
-    await runcmd(
-        f"ffmpeg -ss 00:00:00 -to 00:00:02.900 -i {TaCat} -vf scale={w}:{h} -c:v libvpx-vp9 -crf 30 -b:v 560k -maxrate 560k -bufsize 256k -an animate.webm"
-    )  # pain
-    os.remove(TaCat)
-    sticker = "animate.webm"
-    return sticker
-
-
-async def animator(media, mainevent, textevent):
-    # //Hope u dunt kang :/ @Jisan7509
-    h = media.file.height
-    w = media.file.width
-    w, h = (-1, 512) if h > w else (512, -1)
-    if not os.path.isdir(Config.TEMP_DIR):
-        os.makedirs(Config.TEMP_DIR)
     BadCat = await mainevent.client.download_media(media, Config.TEMP_DIR)
     await textevent.edit("__🎞Converting into Animated sticker..__")
     await runcmd(
@@ -112,17 +93,6 @@ async def animator(media, mainevent, textevent):
     os.remove(BadCat)
     sticker = "animate.webm"
     return sticker
-
-
-def reddit_thumb_link(preview, thumb=None):
-    for i in preview:
-        if "width=216" in i:
-            thumb = i
-            break
-    if not thumb:
-        thumb = preview.pop()
-    return thumb.replace("\u0026", "&")
-
 
 
 # https://github.com/ssut/py-googletrans/issues/234#issuecomment-722379788
