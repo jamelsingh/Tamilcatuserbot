@@ -75,17 +75,6 @@ B = (
     "┈┈┈┈┈┗┻┛┗┻┛┈┈┈┈\n"
 )
 
-C = (
-    "┈┈╭━╱▔▔▔▔╲━╮┈┈┈\n"
-    "┈┈╰╱╭▅╮╭▅╮╲╯┈┈┈\n"
-    "╳┈┈▏╰┈▅▅┈╯▕┈┈┈┈\n"
-    "┈┈┈╲┈╰━━╯┈╱┈┈╳┈\n"
-    "┈┈┈╱╱▔╲╱▔╲╲┈┈┈┈\n"
-    "┈╭━╮▔▏┊┊▕▔╭━╮┈╳\n"
-    "┈┃┊┣▔╲┊┊╱▔┫┊┃┈┈\n"
-    "┈╰━━━━╲╱━━━━╯┈╳\n"
-)
-
 D = (
     "░▐█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█▄\n"
     "░███████████████████████ \n"
@@ -306,22 +295,6 @@ L = (
     "░░░░░░░░░░░░░░░░░░░\n"
 )
 
-N = (
-     "....⣴⣦⡀\n"
-     "....⣿⣿⣿⣦⣤⣤⣀\n"
-     "....⣿⣿⣿⣿⣿⣿⣿⣿⣦⣶⣾⣿⡇\n"
-     "...⣼⠛⡛⢿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠀⠀⢀⣤⣤⢀⣤⣤⡀\n"
-     " ⠣⡀⣿⣄⠣⠃⢻⣿⡿⢛⢛⠻⣿⠏⠀⠀⠀⢿⣿⣿⣷⣿⣿⡆\n"
-     "⠑⠤⣈⠽⣿⣿⣿⡿⢿⣤⣈⣁⣰⡿TACAT⠈⠻⣿⣿⠿⠛⠁\n"
-     "⠑⠒⠒⠒⠉⣻⣿⣿⣿⣿⣿⣿⠿⠤⠤⢊⣀⣀⠀⠀⠙⠟⠁\n"
-     "....⣠⣿⣿⣿⡏⠀⠘⢄⠉⠒⣲⣿⣿⣿⣿⡄⠀⢿⣦⣿⡄\n"
-⠀    "    ⣿⣿⣿⣿⣿⣿⣄    ⣿⣿⡛⢿⣿⣿⠀⠀⠟⠉\n"
-     "    ⠙⣿⣿⣿⣿⣿⣿⣷⣄  ⠹⣿⡿⢸⣿⣿⠀⢠⣶⣦\n"
-     "     ⢻⣿⣿⣿⣿⣿⣿⣿⣷⡀   ⣼⣿⡏⠀⠸⣿⣿⣾⣿\n"
-     "      ⣿⣿⣿⣿⣿⣿⣿⣿⣧⠀⢀⣼⣿⡿⠀⠀⠀⠟⠛⠉⠁\n"
-     "     ⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣿⣿⠟⠀⣠⣀⣄\n"
-     "    ⠙⠛⢻⢿⣿⡿⣿⣿⣿⡿⠿⠛⠋⠁⠀⠀⠙⢿⠋\n"
-)
 
 O = (
     "────██──────▀▀▀██\n"
@@ -382,20 +355,6 @@ async def bluedevilmonster(monster):
 async def bluedevilpig(pig):
     "fun art command"
     await edit_or_reply(pig, B)
-
-
-
-@catub.cat_cmd(
-    pattern="tacat$",
-    command=("tacat", plugin_category),
-    info={
-        "header": "Just a art command try out yourself to see",
-        "usage": "{tr}tacat",
-    },
-)
-async def bluedeviltcat(tacat):
-    "fun art command"
-    await edit_or_reply(tacat, C)
 
 
 @catub.cat_cmd(
@@ -513,19 +472,6 @@ async def bluedevilwelcome(welcome):
 async def bluedevilsnake(snake):
     "fun art command"
     await edit_or_reply(snake, L)
-
-
-@catub.cat_cmd(
-    pattern="tacat$",
-    command=("tacat", plugin_category),
-    info={
-        "header": "Just a art command try out yourself to see",
-        "usage": "{tr}tacat",
-    },
-)
-async def bluedeviltacat(tacat):
-    "fun art command"
-    await edit_or_reply(tacat, N)
 
 
 @catub.cat_cmd(
