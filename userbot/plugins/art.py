@@ -306,23 +306,6 @@ L = (
     "░░░░░░░░░░░░░░░░░░░\n"
 )
 
-
-M = (
-    "╭━━━━━━━╮\n"
-    "┃　 ● ══　  ┃\n"
-    "┃███████┃\n"
-    "┃███████┃\n"
-    "┃███████┃\n"
-    "┃███████┃\n"
-    "┃███████┃\n"
-    "┃███████┃\n"
-    "┃███████┃\n"
-    "┃███████┃\n"
-    "┃ 　    O        ┃\n"
-    "╰━━━━━━━╯\n"
-)
-
-
 N = (
      "....⣴⣦⡀\n"
      "....⣿⣿⣿⣦⣤⣤⣀\n"
@@ -339,7 +322,6 @@ N = (
      "     ⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣿⣿⠟⠀⣠⣀⣄\n"
      "    ⠙⠛⢻⢿⣿⡿⣿⣿⣿⡿⠿⠛⠋⠁⠀⠀⠙⢿⠋\n"
 )
-
 
 O = (
     "────██──────▀▀▀██\n"
@@ -531,19 +513,6 @@ async def bluedevilwelcome(welcome):
 async def bluedevilsnake(snake):
     "fun art command"
     await edit_or_reply(snake, L)
-
-
-@catub.cat_cmd(
-    pattern="tmob$",
-    command=("tmob", plugin_category),
-    info={
-        "header": "Just a art command try out yourself to see",
-        "usage": "{tr}tmob",
-    },
-)
-async def bluedevilmobile(mobile):
-    "fun art command"
-    await edit_or_reply(mobile, M)
 
 
 @catub.cat_cmd(
