@@ -331,6 +331,24 @@ R = (
 )
 
 
+S = (
+     "....⣴⣦⡀\n"
+     "....⣿⣿⣿⣦⣤⣤⣀\n"
+     "    ⣿⣿⣿⣿⣿⣿⣿⣿⣦⣶⣾⣿⡇\n"
+     " ⡀ ⣼⠛⡛⢿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠀⠀⢀⣤⣤⢀⣤⣤⡀\n"
+     " ⠣⡀⣿⣄⠣⠃⢻⣿⡿⢛⢛⠻⣿⠏⠀⠀⠀⢿⣿⣿⣷⣿⣿⡆\n"
+     "⠑⠤⣈⠽⣿⣿⣿⡿⢿⣤⣈⣁⣰⡿⠀⠀⠀⠀⠈⠻⣿⣿⠿⠛⠁\n"
+     "⠑⠒⠒⠒⠉⣻⣿⣿⣿⣿⣿⣿⠿⠤⠤⢊⣀⣀⠀⠀⠙⠟⠁\n"
+     "     ⣠⣿⣿⣿⡏⠀⠘⢄⠉⠒⣲⣿⣿⣿⣿⡄⠀⢿⣦⣿⡄\n"
+⠀    "    ⣿⣿⣿⣿⣿⣿⣄    ⣿⣿⡛⢿⣿⣿⠀⠀⠟⠉\n"
+     "    ⠙⣿⣿⣿⣿⣿⣿⣷⣄  ⠹⣿⡿⢸⣿⣿⠀⢠⣶⣦\n"
+     "     ⢻⣿⣿⣿⣿⣿⣿⣿⣷⡀   ⣼⣿⡏⠀⠸⣿⣿⣾⣿\n"
+     "      ⣿⣿⣿⣿⣿⣿⣿⣿⣧⠀⢀⣼⣿⡿⠀⠀⠀⠟⠛⠉⠁\n"
+     "     ⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣿⣿⠟⠀⣠⣀⣄\n"
+     "    ⠙⠛⢻⢿⣿⡿⣿⣿⣿⡿⠿⠛⠋⠁⠀⠀⠙⢿⠋TAMIL\n"
+)
+
+
 @catub.cat_cmd(
     pattern="monster$",
     command=("monster", plugin_category),
@@ -511,3 +529,17 @@ async def bluedevilshitos(shitos):
 async def bluedevildislike(dislike):
     "fun art command"
     await edit_or_reply(dislike, R)
+
+
+@catub.cat_cmd(
+    pattern="tacat$",
+    command=("tacat", plugin_category),
+    info={
+        "header": "Just a art command try out yourself to see",
+        "usage": "{tr}tacat",
+    },
+)
+async def bluedevilmonster(tacat):
+    "fun art command"
+    await edit_or_reply(tacat, S)
+
