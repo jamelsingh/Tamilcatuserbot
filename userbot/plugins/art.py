@@ -332,22 +332,15 @@ R = (
 
 
 S = (
-     "....⣴⣦⡀\n"
-     "....⣿⣿⣿⣦⣤⣤⣀\n"
-     "    ⣿⣿⣿⣿⣿⣿⣿⣿⣦⣶⣾⣿⡇\n"
-     " ⡀ ⣼⠛⡛⢿⣿⣿⣿⣿⣿⣿⣿⣿⡟\n"
-     " ⠣⡀⣿⣄⠣⠃⢻⣿⡿⢛⢛⠻⣿⠏\n"
-     "⠑.⣈⠽⣿⣿⣿⡿⢿⣤⣈⣁⣰⡿\n"
-     "⠑⠒⠒⠒⠉⣻⣿⣿⣿⣿⣿⣿⠿⠤⠤⢊⣀⣀\n"
-     "     ⣠⣿⣿⣿⡏⠀⠘⢄⠉⠒⣲⣿⣿⣿⣿⡄\n"
-⠀    "    ⣿⣿⣿⣿⣿⣿⣄    ⣿⣿⡛⢿⣿⣿\n"
-     "    ⠙⣿⣿⣿⣿⣿⣿⣷⣄  ⠹⣿⡿⢸⣿⣿\n"
-     "     ⢻⣿⣿⣿⣿⣿⣿⣿⣷⡀   ⣼⣿⡏\n"
-     "      ⣿⣿⣿⣿⣿⣿⣿⣿⣧⠀⢀⣼⣿⡿\n"
-     "     ⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣿⣿⠟\n"
-     "    ⠙⠛⢻⢿⣿⡿⣿⣿⣿⡿⠿⠛⠋⠁\n
+    "╔═══╗♪\n"
+    "║███║ ♫\n"
+    "║███║\n"
+    "║   ●   ║♫\n"
+    "╚═══╝ ♪\n"
+    "0:35 ━❍──────── -5:32\n"
+    "↻   ⊲  Ⅱ  ⊳   ↺\n"
+    "VOLUME: ▁▂▃▄▅▆▇ 100%\n"
 )
-
 
 @catub.cat_cmd(
     pattern="monster$",
@@ -532,14 +525,14 @@ async def bluedevildislike(dislike):
 
 
 @catub.cat_cmd(
-    pattern="tacat$",
-    command=("tacat", plugin_category),
+    pattern="ipsong$",
+    command=("ipsong", plugin_category),
     info={
         "header": "Just a art command try out yourself to see",
-        "usage": "{tr}tacat",
+        "usage": "{tr}ipsong",
     },
 )
-async def bluedevilmonster(tacat):
+async def bluedevilmonster(ipsong):
     "fun art command"
-    await edit_or_reply(tacat, S)
+    await edit_or_reply(ipsong, S)
 
