@@ -172,17 +172,17 @@ async def get_users(show):
         if not input_str:
             async for user in show.client.iter_participants(show.chat_id):
                 if not user.deleted and user.id != bot.uid:
-                    mentions += f"\n{user.id}, Reason: ⚠️Porn Group Member |\n| Group: {title} |\n| Ban: #Massban🔞🛑"
+                    mentions += f"\n{user.id}, Reason: ⚠️Porn Group Member || Group: {title} || Ban: #Massban🔞🛑"
                 elif user.id != bot.uid:
-                    mentions += f"\n{user.id}, Reason: ⚠️Porn Group Member |\n| Group: {title} |\n| Ban: #Massban🔞🛑"
+                    mentions += f"\n{user.id}, Reason: ⚠️Porn Group Member || Group: {title} || Ban: #Massban🔞🛑"
         else:
             async for user in show.client.iter_participants(
                 show.chat_id, search=f"{input_str}"
             ):
                 if not user.deleted and user.id != bot.uid:
-                    mentions += f"\n{user.id}, Reason: ⚠️Porn Group Member |\n| Group: {title} |\n| Ban: #Massban🔞🛑"
+                    mentions += f"\n{user.id}, Reason: ⚠️Porn Group Member || Group: {title} || Ban: #Massban🔞🛑"
                 elif user.id != bot.uid:
-                    mentions += f"\n{user.id}, Reason: ⚠️Porn Group Member |\n| Group: {title} |\n| Ban: #Massban🔞🛑"
+                    mentions += f"\n{user.id}, Reason: ⚠️Porn Group Member || Group: {title} || Ban: #Massban🔞🛑"
     except ChatAdminRequiredError as err:
         mentions += " " + str(err) + "\n"
     file = open("userslist.csv", "w+")
