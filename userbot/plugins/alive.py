@@ -48,6 +48,7 @@ async def amireallyalive(event):
         CAT = [x for x in CAT_IMG.split()]
         A_IMG = list(CAT)
         PIC = random.choice(A_IMG)
+        cat_caption = f"**ALIVE TAMILCATUSERBOT**"
         cat_caption = f"{CUSTOM_ALIVE_TEXT}\n\n"
         cat_caption += f"**{EMOJI} Database :** `{check_sgnirts}`\n"
         cat_caption += f"**{EMOJI} Telethon version :** `{version.__version__}\n`"
