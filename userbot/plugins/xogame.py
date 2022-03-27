@@ -8,7 +8,6 @@ from userbot import bot
 import aiohttp
 import requests
 
-from ..helpers.functions import age_verification
 from . import catub, edit_delete, edit_or_reply, eod, eor, reply_id
 
 session = aiohttp.ClientSession()
