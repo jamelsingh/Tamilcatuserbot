@@ -38,14 +38,6 @@ def deEmojify(inputString: str) -> str:
     """Remove emojis and other non-safe characters from string"""
     return re.sub(IF_EMOJI, "", inputString)
 
-@catub.cat_cmd(
-    pattern="ded ([\s\S]*)",
-    command=("ded", plugin_category),
-    info={
-        "header": "Just a art command try out yourself to see",
-        "usage": "{tr}ded <text>",
-    },
-)
 
 @catub.cat_cmd(
     pattern="playxo ([\s\S]*)",
