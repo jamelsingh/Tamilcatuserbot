@@ -2,7 +2,10 @@ import html
 import os
 import urllib
 from urllib.parse import quote as urlencode
-
+import re
+import random
+from userbot import bot
+from userbot.utils import admin_cmd
 import aiohttp
 import requests
 from telethon.errors.rpcerrorlist import YouBlockedUserError
