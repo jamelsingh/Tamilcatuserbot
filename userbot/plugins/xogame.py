@@ -37,12 +37,22 @@ IF_EMOJI = re.compile(
 def deEmojify(inputString: str) -> str:
     """Remove emojis and other non-safe characters from string"""
     return re.sub(IF_EMOJI, "", inputString)
+
 @catub.cat_cmd(
-    pattern="xo ([\s\S]*)",
-    command=("xo", plugin_category),
+    pattern="ded ([\s\S]*)",
+    command=("ded", plugin_category),
+    info={
+        "header": "Just a art command try out yourself to see",
+        "usage": "{tr}ded <text>",
+    },
+)
+
+@catub.cat_cmd(
+    pattern="playxo ([\s\S]*)",
+    command=("playxo", plugin_category),
     info={
         "header": "To play xo game.",
-        "examples": "{tr}xo",
+        "examples": "{tr}playxo",
     },
 )
 async def nope(doit):
