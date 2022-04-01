@@ -1,9 +1,3 @@
-# By @kirito6969 for PepeBot
-# Don't edit credits Madafaka
-"""
-This module can search images in danbooru and send in to the chat!
-──「 **Danbooru Search** 」──
-"""
 
 import html
 import os
@@ -136,43 +130,6 @@ async def butts(e):
     await e.client.send_file(e.chat_id, "butts.jpg", reply_to=reply_to)
     os.remove("butts.jpg")
     await a.delete()
-
-
-PENIS_TEMPLATE = """
-🍆🍆
-🍆🍆🍆
-  🍆🍆🍆
-    🍆🍆🍆
-     🍆🍆🍆
-       🍆🍆🍆
-        🍆🍆🍆
-         🍆🍆🍆
-          🍆🍆🍆
-          🍆🍆🍆
-      🍆🍆🍆🍆
- 🍆🍆🍆🍆🍆🍆
- 🍆🍆🍆  🍆🍆🍆
-    🍆🍆       🍆🍆
-"""
-
-
-@catub.cat_cmd(
-    pattern=r"(?:penis|dick)\s?(.)?",
-    command=("dick", plugin_category),
-    info={
-        "header": "NSFW 🔞\nThis is Something EPIC that horny girls wanna see for sure! 🌚",
-        "usage": "{tr}dick",
-        "examples": "{tr}dick",
-    },
-)
-async def emoji_penis(e):
-    "Good diks"
-    emoji = e.pattern_match.group(1)
-    o = await edit_or_reply(e, "`Dickifying...`")
-    message = PENIS_TEMPLATE
-    if emoji:
-        message = message.replace("🍆", emoji)
-    await o.edit(message)
 
 
 @catub.cat_cmd(
