@@ -9,7 +9,7 @@ from userbot import catub
 
 from . import mention
 
-plugin_category = "useless"
+plugin_category = "extra"
 
 PICS_STR = []
 
