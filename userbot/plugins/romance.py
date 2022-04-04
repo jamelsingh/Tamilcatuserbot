@@ -79,8 +79,8 @@ async def some(event):
 
 
 @catub.cat_cmd(
-    pattern="bit(?:\s|$)([\s\S]*)",
-    command=("bit", plugin_category),
+    pattern="ibit(?:\s|$)([\s\S]*)",
+    command=("ibit", plugin_category),
     info={
         "header": "Sends random x romance",
         "usage": [
