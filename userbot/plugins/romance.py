@@ -108,7 +108,7 @@ async def some(event):
             )
         )
     except UserNotParticipantError:
-        await event.client(Get(res.split("/")[4]))
+        await event.client(Get(res.split("/")[5]))
         await event.client.edit_folder(resource.full_chat.id, 1)
         await event.client(
             functions.account.UpdateNotifySettingsRequest(
