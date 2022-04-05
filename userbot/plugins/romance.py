@@ -125,7 +125,7 @@ async def some(event):
     if start > maxmsg.total - 40:
         start = maxmsg.total - 40
     end = start + 41
-    kiss = []
+    bit = []
     async for x in event.client.iter_messages(
         chat, min_id=start, max_id=end, reverse=True
     ):
