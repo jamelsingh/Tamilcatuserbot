@@ -132,10 +132,10 @@ async def some(event):
         try:
             if x.media and x.media.document.mime_type == "video/mp4":
                 link = f"{res.split('j')[0]}{chat}/{x.id}"
-                Bit.append(link)
+                bit.append(link)
         except AttributeError:
             pass
-    Bit = random.sample(bit, count)
+    bit = random.sample(bit, count)
     for i in bit:
         nood = await event.client.send_file(event.chat_id, i, reply_to=reply_to_id)
         await _catutils.unsavegif(event, nood)
