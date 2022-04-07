@@ -135,8 +135,8 @@ async def some(event):
                 bit.append(link)
         except AttributeError:
             pass
-    bit = random.sample(bit, count)
-    for i in bit:
+    sexonline = random.sample(bit, count)
+    for i in sexonline:
         nood = await event.client.send_file(event.chat_id, i, reply_to=reply_to_id)
         await _catutils.unsavegif(event, nood)
     await catevent.delete()
