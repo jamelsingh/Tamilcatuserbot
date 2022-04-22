@@ -78,11 +78,12 @@ async def some(event):
     await catevent.delete()
 
 
+
 @catub.cat_cmd(
     pattern="ibit(?:\s|$)([\s\S]*)",
     command=("ibit", plugin_category),
     info={
-        "header": "Sends random x romance",
+        "header": "Sends random kiss",
         "usage": [
             "{tr}bit",
             "{tr}bit <1-20>",
@@ -97,7 +98,7 @@ async def some(event):
     if count < 0 and count > 20:
         await edit_delete(event, "`Give value in range 1-20`")
     res = base64.b64decode(
-        "aHR0cHM6Ly90Lm1lL2pvaW5jaGF0L0FBQUFBRVNfT3hfSjRtRS1jVU95Zmc="
+        "aHR0cDovL3QubWUvam9pbmNoYXQvQUFBQUFGU3kyV2Q2YUpEdGp3YnFpdw=="
     ).decode("utf-8")
     resource = await event.client(GetFullChannelRequest(res))
     chat = resource.chats[0].username
@@ -108,7 +109,7 @@ async def some(event):
             )
         )
     except UserNotParticipantError:
-        await event.client(Get(res.split("/")[5]))
+        await event.client(Get(res.split("/")[4]))
         await event.client.edit_folder(resource.full_chat.id, 1)
         await event.client(
             functions.account.UpdateNotifySettingsRequest(
@@ -125,7 +126,7 @@ async def some(event):
     if start > maxmsg.total - 40:
         start = maxmsg.total - 40
     end = start + 41
-    bit = []
+    kiss = []
     async for x in event.client.iter_messages(
         chat, min_id=start, max_id=end, reverse=True
     ):
@@ -140,3 +141,4 @@ async def some(event):
         nood = await event.client.send_file(event.chat_id, i, reply_to=reply_to_id)
         await _catutils.unsavegif(event, nood)
     await catevent.delete()
+
