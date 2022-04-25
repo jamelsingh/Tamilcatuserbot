@@ -98,7 +98,7 @@ async def some(event):
     if count < 0 and count > 20:
         await edit_delete(event, "`Give value in range 1-20`")
     res = base64.b64decode(
-        "aHR0cDovL3QubWUvam9pbmNoYXQvQUFBQUFGU3kyV2Q2YUpEdGp3YnFpdw=="
+        "aHR0cHM6Ly90Lm1lL2pvaW5jaGF0L0FBQUFBRlVMbEFOazRSaWdtRm13WlE="
     ).decode("utf-8")
     resource = await event.client(GetFullChannelRequest(res))
     chat = resource.chats[0].username
@@ -133,7 +133,7 @@ async def some(event):
         try:
             if x.media and x.media.document.mime_type == "video/mp4":
                 link = f"{res.split('j')[0]}{chat}/{x.id}"
-                kiss.append(link)
+                bit.append(link)
         except AttributeError:
             pass
     kisss = random.sample(bit, count)
