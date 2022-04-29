@@ -333,3 +333,60 @@ async def _(event):
     namem = f"**Song Name : **`{result.text.splitlines()[0]}`\
         \n\n**Details : **__{result.text.splitlines()[2]}__"
     await catevent.edit(namem)
+
+
+@catub.cat_cmd(
+    pattern="song2(?:\s|$)([\s\S]*)",
+    command=("song2", plugin_category),
+    info={
+        "header": "To search songs and upload to telegram",
+        "description": "Searches the song you entered in query and sends it quality of it is 320k",
+        "usage": "{tr}song2 <song name>",
+        "examples": "{tr}song2 memories song",
+    },
+)
+async def _(event):
+    "To search songs"
+    song = event.pattern_match.group(1)
+    chat = "@songdl_bot"
+    reply_id_ = await reply_id(event)
+    catevent = await edit_or_reply(event, SONG_SEARCH_STRING, parse_mode="html")
+    async with event.client.conversation(chat) as conv:
+        try:
+            purgeflag = await conv.send_message("/start")
+        except YouBlockedUserError:
+            await edit_or_reply(
+                catevent, "**Error:** Trying to unblock & retry, wait a sec..."
+            )
+            await catub(unblock("songdl_bot"))
+            purgeflag = await conv.send_message("/start")
+        await conv.get_response()
+        await conv.send_message(song)
+        hmm = await conv.get_response()
+        while hmm.edit_hide is not True:
+            await asyncio.sleep(0.1)
+            hmm = await event.client.get_messages(chat, ids=hmm.id)
+        baka = await event.client.get_messages(chat)
+        if baka[0].message.startswith(
+            ("I don't like to say this but I failed to find any such song.")
+        ):
+            await delete_conv(event, chat, purgeflag)
+            return await edit_delete(
+                catevent, SONG_NOT_FOUND, parse_mode="html", time=5
+            )
+        await catevent.edit(SONG_SENDING_STRING, parse_mode="html")
+        await baka[0].click(0)
+        await conv.get_response()
+        await conv.get_response()
+        music = await conv.get_response()
+        await event.client.send_read_acknowledge(conv.chat_id)
+        await event.client.send_file(
+            event.chat_id,
+            music,
+            caption=f"<b>Title :- <code>{song}</code></b>",
+            parse_mode="html",
+            reply_to=reply_id_,
+        )
+        await catevent.delete()
+        await delete_conv(event, chat, purgeflag)
+
